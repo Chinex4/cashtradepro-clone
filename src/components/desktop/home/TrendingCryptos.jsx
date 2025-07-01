@@ -2,6 +2,7 @@ import { ChevronRight } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
 const API_KEY = import.meta.env.VITE_COINGECKO_API_KEY;
 const CACHE_KEY = 'coingecko_trending_data';
@@ -16,6 +17,7 @@ export default function TrendingCryptos() {
 	});
 	const [loading, setLoading] = useState(true);
 	const [lastUpdated, setLastUpdated] = useState(Date.now());
+	const navigate = useNavigate();
 
 	const tabs = ['Popular Futures', 'Popular Spot', 'Gainers'];
 
@@ -113,9 +115,9 @@ export default function TrendingCryptos() {
 				<h2 className='text-3xl lg:text-4xl font-bold text-white'>
 					Trending Cryptocurrencies
 				</h2>
-				<a href='#' className='text-sm text-white hover:underline flex items-center'>
+				<Link to={'/markets'} href='#' className='text-sm text-white hover:underline flex items-center'>
 					View More <ChevronRight className='ml-1' />
-				</a>
+				</Link>
 			</div>
 
 			{/* Tabs */}
@@ -202,7 +204,7 @@ export default function TrendingCryptos() {
 								</div>
 
 								<div className='hidden md:block'>
-									<button className='bg-gray-800 px-4 py-1 rounded text-white text-xs hover:bg-lime-400'>
+									<button onClick={() => navigate(`/contract-trade/${crypto.symbol.toUpperCase()}-USDT`)} className='bg-[#171717] px-4 py-1 rounded text-white text-xs hover:bg-lime-400 hover:text-black'>
 										Trade
 									</button>
 								</div>

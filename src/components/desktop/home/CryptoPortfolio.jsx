@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const API_KEY = import.meta.env.VITE_COINGECKO_API_KEY;
 const CACHE_KEY = 'cached_coin_data';
@@ -119,9 +120,9 @@ const CryptoPortfolio = () => {
 				</div>
 			)}
 
-			<button className='mt-14 bg-lime-400 hover:bg-lime-500 text-black font-semibold py-3 px-6 rounded-md text-sm z-20'>
+			<Link to={'/contract-trade/BTC-USDT'} className='mt-14 bg-lime-400 hover:bg-lime-500 text-black font-semibold py-3 px-6 rounded-md text-sm z-20'>
 				Trade Now with $10
-			</button>
+			</Link>
 		</section>
 	);
 };
