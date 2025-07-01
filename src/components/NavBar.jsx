@@ -197,14 +197,14 @@ const Navbar = () => {
 					className='text-lime-400 font-bold text-xl italic flex items-center gap-1'>
 					<div className='bg-lime-400 rounded-full p-1'></div> Bitunix
 				</Link>
-				<div className='hidden lg:flex items-center gap-1'>
+				<div className='hidden lg:flex items-center gap-3'>
 					{navLinks.map((link, index) => (
 						<div
 							className='dropdown dropdown-hover'
 							key={index}>
 							<div className='relative'>
 								{link.dropdown ? (
-									<button className='btn btn-ghost btn-sm hover:bg-transparent text-[10px] rounded-btn flex items-center gap-1 px-2'>
+									<button className='btn btn-ghost btn-sm cursor-pointer hover:bg-transparent text-[11px] rounded-btn flex items-center gap-1 px-2'>
 										{link.name}
 										<ChevronDown size={16} />
 										{link.badge && (
@@ -216,7 +216,7 @@ const Navbar = () => {
 								) : (
 									<Link
 										to={link.path}
-										className='btn btn-ghost btn-xs px-2 rounded-btn relative flex items-center gap-1 text-[10px]'>
+										className='btn btn-ghost btn-xs cursor-pointer hover:bg-transparent px-2 rounded-btn relative flex items-center gap-1 text-[11px]'>
 										{link.name}
 										{link.badge && (
 											<span className='bg-lime-400 absolute -top-1 -right-3 text-black text-[6px] px-1 py-0.5 rounded'>
@@ -232,7 +232,7 @@ const Navbar = () => {
 										<Link
 											key={item.path}
 											to={item.path}
-											className='flex gap-3 items-center'>
+											className='flex gap-3 items-center cursor-pointer'>
 											<span className='text-lime-400'>{item.icon}</span>
 											<span>{item.text}</span>
 										</Link>
