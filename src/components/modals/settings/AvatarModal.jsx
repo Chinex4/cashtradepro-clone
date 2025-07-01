@@ -43,10 +43,7 @@ const AvatarModal = ({
               key={i}
               src={src}
               alt={`avatar-${i}`}
-              onClick={() => {
-                setSelectedAvatar(src);
-                handleAvatarSave();
-              }}
+              onClick={() => setSelectedAvatar(src)}
               className={`w-16 h-16 rounded-full cursor-pointer border-2 ${
                 selectedAvatar === src ? "border-lime-400" : (
                   "border-transparent"
@@ -54,6 +51,26 @@ const AvatarModal = ({
               }`}
             />
           ))}
+        </div>
+        <div className='flex justify-end gap-3 mt-4'>
+          <button
+            onClick={onCancel}
+            className='px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-md'
+          >
+            Cancel
+          </button>
+          <button
+            disabled={!isSaveEnabled}
+            onClick={handleAvatarSave}
+            className={`px-4 py-2 rounded-md font-semibold ${
+              isSaveEnabled ?
+                "bg-lime-400 text-black hover:bg-lime-500"
+              : "bg-gray-500 text-white cursor-not-allowed"
+            }`}
+            
+          >
+            Save
+          </button>
         </div>
       </Tab.Panel>
       <Tab.Panel>
@@ -93,13 +110,13 @@ const AvatarModal = ({
             Cancel
           </button>
           <button
-            disabled={!isSaveEnabled}
             onClick={handleAvatarSave}
             className={`px-4 py-2 rounded-md font-semibold ${
               isSaveEnabled ?
                 "bg-lime-400 text-black hover:bg-lime-500"
               : "bg-gray-500 text-white cursor-not-allowed"
             }`}
+
           >
             Save
           </button>

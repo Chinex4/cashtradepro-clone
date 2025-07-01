@@ -16,6 +16,7 @@ import AnimatedModal from "../../components/modals/settings/AnimatedModal";
 import NicknameModal from "../../components/modals/settings/NicknameModal";
 import AvatarModal from "../../components/modals/settings/AvatarModal";
 import LanguageModal from "../../components/modals/settings/LanguageModal";
+import { fetchLoggedInUser } from "../../redux/user/userThunk";
 
 const languages = [
   "English",
@@ -98,6 +99,7 @@ const Settings = () => {
         }
       );
       dispatch(updateNickname(nicknameInput));
+      dispatch(fetchLoggedInUser());
       closeModal();
     } catch (err) {
       console.error(err);
@@ -140,16 +142,20 @@ const Settings = () => {
           error: "Failed to update profile picture",
         }
       );
+
+      dispatch(fetchLoggedInUser());
+
       closeModal();
+      setUploadedImagePreview(null);
+      setSelectedAvatar(null);
     } catch (err) {
       console.error(err);
     }
-
-    closeModal();
-    setUploadedImagePreview(null);
-    setSelectedAvatar(null);
   };
-const selectediMAGE = userImage === null ? uploadedImagePreview || selectedAvatar || "/avatars/a1.png" : userImage
+  const selectediMAGE =
+    userImage === null ?
+      uploadedImagePreview || selectedAvatar || "/avatars/a1.png"
+    : userImage;
 
   return (
     <div className='p-4 text-white max-w-6xl mx-auto space-y-8'>
