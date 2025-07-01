@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const steps = [
 	{
-		title: 'Create your Bitunix account',
+		title: 'Create your Cashtradepro account',
 		iconColor: 'bg-lime-400',
 		arrow: true,
 		route: '/register',

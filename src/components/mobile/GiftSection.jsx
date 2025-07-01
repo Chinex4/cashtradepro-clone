@@ -47,7 +47,7 @@ const GiftsSection = () => {
       <div>
         <img
           width={150}
-          src='https://static.bitunix.com/web/bitunix-assets/homeindex-guide-banner2.CPBBsizT.svg'
+          src='https://static.Cashtradepro.com/web/Cashtradepro-assets/homeindex-guide-banner2.CPBBsizT.svg'
           alt=''
         />
       </div>

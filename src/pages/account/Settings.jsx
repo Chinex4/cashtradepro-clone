@@ -41,6 +41,12 @@ const Settings = () => {
 
   const username = fetchedUser?.message?.userDetails?.username;
   const email = fetchedUser?.message?.userDetails?.email;
+  const userPic = fetchedUser?.message?.userDetails?.image;
+  
+  const userImage = userPic?.startsWith('"') ? JSON.parse(userPic) : userPic;
+  console.log(userImage);
+
+
   const userNickname = nickname || username || email;
 
   const fileInputRef = useRef();
@@ -141,6 +147,10 @@ const Settings = () => {
     } catch (err) {
       console.error(err);
     }
+
+    closeModal();
+    setUploadedImagePreview(null);
+    setSelectedAvatar(null);
   };
 
   return (
@@ -188,10 +198,16 @@ const Settings = () => {
             </div>
             <div className='flex gap-2 items-center'>
               <img
-                className='w-10 h-10 rounded-full'
-                src={selectedAvatar || uploadedImagePreview}
+                className='w-10 h-10 rounded-full object-cover'
+                src={
+                  uploadedImagePreview || // temporary preview from upload
+                  selectedAvatar || // selected preset avatar
+                  userImage || // saved image from DB
+                  "/avatars/a1.png" // fallback image
+                }
                 alt='avatar'
               />
+
               <button
                 onClick={() => setOpenModal("avatar")}
                 className='text-lime-400 font-medium text-xs'

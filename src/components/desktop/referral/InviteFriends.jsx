@@ -33,7 +33,7 @@ const InviteFriends = () => {
 						</div>
 						<h4 className='font-semibold text-lg mb-1'>Share links</h4>
 						<p className='text-gray-400 text-sm'>
-							Invite friends to register on Bitunix
+							Invite friends to register on Cashtradepro
 						</p>
 					</div>
 

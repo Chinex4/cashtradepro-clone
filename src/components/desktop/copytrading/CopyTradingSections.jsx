@@ -36,7 +36,7 @@ const CopyTradingSection = () => {
 			<div className='max-w-7xl mx-auto mt-8 bg-zinc-900 py-3 px-4 text-sm text-gray-300 flex items-center gap-2 overflow-hidden'>
 				<span className='text-lime-400'>🗞</span>
 				<span className='whitespace-nowrap animate-marquee'>
-					Bitunix Copy Trading Expands – More Pairs, More Opportunities!
+					Cashtradepro Copy Trading Expands – More Pairs, More Opportunities!
 				</span>
 			</div>
 		</div>

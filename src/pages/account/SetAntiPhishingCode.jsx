@@ -43,7 +43,7 @@ export default function SetAntiPhishingCode() {
 			<h2 className='text-2xl font-bold mb-4'>Set Anti-Phishing code</h2>
 
 			<div className='bg-blue-900 text-sm text-blue-200 p-3 rounded-md mb-6'>
-				*Do not share your Anti-Phishing code with anyone, including Bitunix
+				*Do not share your Anti-Phishing code with anyone, including Cashtradepro
 				staff.
 			</div>
 

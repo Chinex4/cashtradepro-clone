@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-	// baseURL: 'http://172.20.10.2/cashtradeproApi/api/task/',
+	// baseURL: 'http://172.20.10.3/cashtradeproApi/api/task/',
 	baseURL: 'http://192.168.8.189/cashtradeproApi/api/task/',
 	// baseURL: 'http://192.168.1.117/backend/api/task/',
 	// baseURL: 'http://192.168.69.22/backend/api/task/',

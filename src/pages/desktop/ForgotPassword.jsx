@@ -45,7 +45,7 @@ const ForgotPassword = () => {
         <div className='text-center'>
           <img
             src='/mobile/login-img.webp'
-            alt='Bitunix chest'
+            alt='Cashtradepro chest'
             className='max-w-sm mx-auto mb-6'
           />
           <h2 className='text-3xl font-bold mb-2'>

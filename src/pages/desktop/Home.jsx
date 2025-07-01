@@ -3,10 +3,10 @@ import NewListingsCarousel from '../../components/desktop/home/NewListingsCarous
 import TrendingCryptos from '../../components/desktop/home/TrendingCryptos';
 import WhoIsUsing from '../../components/desktop/home/WhoIsUsing';
 import CryptoPortfolio from '../../components/desktop/home/CryptoPortfolio';
-import WhyBitunix from '../../components/desktop/home/WhyBitunix';
+import WhyCashtradepro from '../../components/desktop/home/WhyCashtradepro';
 import BeginJourney from '../../components/desktop/home/BeginJourney';
 import ReviewsSection from '../../components/desktop/home/ReviewsSection';
-import BitunixApp from '../../components/desktop/home/BitunixApp';
+import CashtradeproApp from '../../components/desktop/home/CashtradeproApp';
 
 function Home() {
 	return (
@@ -17,11 +17,11 @@ function Home() {
 				<TrendingCryptos />
 				<WhoIsUsing />
 				<CryptoPortfolio />
-				<WhyBitunix />
+				<WhyCashtradepro />
 				<BeginJourney />
 				<ReviewsSection />
 			</div>
-			<BitunixApp />
+			<CashtradeproApp />
 		</>
 	);
 }

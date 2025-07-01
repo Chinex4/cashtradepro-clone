@@ -33,7 +33,7 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 						leaveTo='opacity-0 scale-95'>
 						<Dialog.Panel className='w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded bg-stone-900 p-6 text-sm text-gray-800 shadow-xl'>
 							<Dialog.Title className='text-xl text-lime-400 font-semibold mb-4'>
-								Bitunix User Agreement
+								Cashtradepro User Agreement
 							</Dialog.Title>
 							<button
 								className='absolute top-4 right-6 text-lg text-gray-400 hover:text-black'
@@ -43,22 +43,22 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 							<div className='space-y-4 text-justify'>
 								{/* Paste full agreement content here */}
 								<p className='text-white'>
-									Bitunix operates in
+									Cashtradepro operates in
 									conjunction with its affiliates (hereinafter jointly referred
-									to as the “Company” or “Bitunix”) the website
-									https://www.bitunix.com (hereinafter referred to as “Site”)
+									to as the “Company” or “Cashtradepro”) the website
+									https://www.Cashtradepro.com (hereinafter referred to as “Site”)
 									and related mobile applications (hereinafter referred to as
 									the “Platforms” which expression, for the avoidance of doubt,
 									shall include the “Site”) to provide users digital assets-only
 									transaction and related services. For the purpose of these
 									Terms, affiliate means another entity that directly, or
 									indirectly through one or more intermediaries, controls or is
-									controlled by or is under common control with Bitunix By
+									controlled by or is under common control with Cashtradepro By
 									completing the registration as a user of our Platforms, you
 									agree with and accept these Terms of Service (hereinafter
 									referred to as the “Terms”) and all policies published on this
 									website. IF YOU DO NOT ACCEPT THESE TERMS OF USE, DO NOT
-									ACCESS THIS SITE AND DO NOT USE ANY OF BITUNIX’S SERVICES,
+									ACCESS THIS SITE AND DO NOT USE ANY OF Cashtradepro’S SERVICES,
 									PRODUCTS AND CONTENT. 1. Acceptance of Terms 1.1 You are at
 									least 18 years of age and have the full capacity to accept
 									these Terms and enter into a transaction involving digital
@@ -96,11 +96,11 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									Platforms from your account (either personally or through
 									another person) in accordance with these Terms and the
 									relevant rules and instructions of our Platforms, these Terms
-									shall have legal effect between you and bitunix. These Terms
+									shall have legal effect between you and Cashtradepro. These Terms
 									do not cover legal relationships or legal disputes between you
 									and other users of our Platforms as a result of network
 									services or transactions, if any. 1.6 You also agree that
-									Bitunix may, by giving notice, at its sole discretion
+									Cashtradepro may, by giving notice, at its sole discretion
 									immediately terminate your access to our Platforms and to your
 									account. You agree and acknowledge our right to limit, suspend
 									or terminate the service and your user account, prohibit your
@@ -110,10 +110,10 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									recover any loss or damages caused if we determine at our sole
 									discretion that you are or may be in breach of any laws,
 									regulations, the rights of third parties, or any of these
-									Terms or Platform’s policies. Bitunix shall not be liable for
+									Terms or Platform’s policies. Cashtradepro shall not be liable for
 									any loss or damage caused to you or any third party as a
 									result of exercising our rights under this clause. 2. Scope of
-									Service and Your Rights and Obligations 2.1 Bitunix provides
+									Service and Your Rights and Obligations 2.1 Cashtradepro provides
 									you with the service of trading one type of digital asset for
 									another type of digital asset. We do not purchase or sell
 									digital assets directly from or to users as principal. Our
@@ -143,13 +143,13 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									regulations in your country of residence and/or the country
 									from which you access our Platforms and services. 2.4 In order
 									to access and use our services, you must create an account
-									with Bitunix. You agree to: （1）provide accurate, current and
+									with Cashtradepro. You agree to: （1）provide accurate, current and
 									complete information when creating the account; （2）maintain
 									and promptly update your account information to keep it
 									accurate, complete, and current; （3）maintain the security
 									and confidentiality of your login credentials and restrict
 									access to your account and your computer; （4）promptly notify
-									Bitunix if you discover or otherwise suspect any security
+									Cashtradepro if you discover or otherwise suspect any security
 									breaches related to our Platforms; （5）take responsibility
 									for all activities that occur under your account and accept
 									all risks of unauthorized access. 2.5 In order to provide
@@ -368,29 +368,29 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									measures (including but not limited to changing or deleting
 									the content you posted, suspending or terminating your right
 									to use the services) to mitigate the impact of your conduct.
-									6.4 Orders you place on Bitunix during regular operation will
+									6.4 Orders you place on Cashtradepro during regular operation will
 									normally be executed if the market price is at a point within
 									the limits of your order. However, we do not guarantee that
 									your order will be filled even if the market price was within
 									your limit at the time such order was placed or was otherwise
-									open. Orders you place on Bitunix during planned or unplanned
+									open. Orders you place on Cashtradepro during planned or unplanned
 									downtime will be processed on a commercially reasonable
-									efforts basis once we resume operations. Bitunix reserves the
+									efforts basis once we resume operations. Cashtradepro reserves the
 									right to reject or cancel orders made and/or pending during
-									downtime. 6.5 Orders may be subject to, and Bitunix shall have
+									downtime. 6.5 Orders may be subject to, and Cashtradepro shall have
 									no liability for, delays, difficulties, and/or conditions
 									affecting transmission or execution of orders over which
-									Bitunix has no control, including, but not limited to,
+									Cashtradepro has no control, including, but not limited to,
 									mechanical or electronic failure or market congestion. 7.
 									Intellectual Property 7.1 All content on our Platforms are the
-									property of Bitunix and is protected by copyright, patent,
+									property of Cashtradepro and is protected by copyright, patent,
 									trademark and any other applicable laws, unless otherwise
 									specified hereby. 7.2 The trademarks, trade names, service
-									marks and logos of Bitunix and others used on our Platforms
-									are the property of Bitunix and its respective owners. The
+									marks and logos of Cashtradepro and others used on our Platforms
+									are the property of Cashtradepro and its respective owners. The
 									software, applications, text, images, graphics, data, prices,
 									trades, charts, graphs, video and audio materials used on our
-									Platforms belong to Bitunix. The trademarks and other content
+									Platforms belong to Cashtradepro. The trademarks and other content
 									on our Platforms should not be copied, reproduced, modified,
 									republished, uploaded, posted, transmitted, scraped, collected
 									or distributed in any form or by any means, no matter manual
@@ -399,14 +399,14 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									other purpose is strictly prohibited; any such unauthorized
 									use may violate copyright, patent, trademark and any other
 									applicable laws and could result in criminal or civil
-									penalties. 7.4 Bitunix is a trademark owned by the Company and
+									penalties. 7.4 Cashtradepro is a trademark owned by the Company and
 									allows no unauthorized use by any user or third parties. 7.5
-									Bitunix supports the protection of intellectual property. If
+									Cashtradepro supports the protection of intellectual property. If
 									you would like to submit (i) a trademark claim for violation
 									of a mark on which you hold a valid, registered trademark or
 									service mark, or (ii) a copyright claim for material on which
 									you hold a bona fide copyright, please send us an email to
-									support@bitunix.com. 8. Privacy Policy Once the user
+									support@Cashtradepro.com. 8. Privacy Policy Once the user
 									registers, logs in, and uses our Platforms’ services, the user
 									will be deemed to fully understand, agree and accept our
 									Platforms’ privacy agreement. 9. Disclaimer of Liability Our
@@ -418,24 +418,24 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									or sell digital assets, or make any investment. Before
 									engaging in any transaction or investment activity, you should
 									consult a qualified professional. The services that we provide
-									through bitunix are provided to you on a strictly “as is,”
+									through Cashtradepro are provided to you on a strictly “as is,”
 									“where is” and “where available” basis. The company does not
 									represent or warrant to the accuracy, completeness,
 									currentness, non-infringement, merchantability, or fitness for
-									a particular purpose of bitunix or the information contained
+									a particular purpose of Cashtradepro or the information contained
 									therein or services contained thereon. The company shall not
 									be liable to you or anyone else for any loss or injury
-									resulting directly or indirectly from your use of bitunix or
-									any services provided by bitunix, including any loss caused in
+									resulting directly or indirectly from your use of Cashtradepro or
+									any services provided by Cashtradepro, including any loss caused in
 									whole or part by any inaccuracies or incompleteness, delays,
 									interruptions, errors or omissions, including, but not limited
 									to, those arising from the negligence of the company or
 									contingencies beyond their control in procuring, compiling,
-									interpreting, computing, reporting, or delivering bitunix, the
+									interpreting, computing, reporting, or delivering Cashtradepro, the
 									services thereon or the information therein. In no event will
 									the company be liable to you or anyone else for any decision
 									made or action taken by you in reliance on, or in connection
-									with your use of bitunix, the services thereon or the
+									with your use of Cashtradepro, the services thereon or the
 									information therein. In no event will the company be liable to
 									you, whether in contract or tort, for any direct, special,
 									indirect, consequential or incidental damages or any other
@@ -447,7 +447,7 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									telephone or other interconnect problem, unauthorized access,
 									theft, operator errors, strikes or other labor problems or any
 									force majeure. We cannot and do not guarantee continuous,
-									uninterrupted or secure access to bitunix. 10. Risks 10.1
+									uninterrupted or secure access to Cashtradepro. 10. Risks 10.1
 									Digital assets transaction may be subject to high risks.
 									10.1.1 The risk of loss in trading digital assets may be
 									substantial and losses may occur over a short period of time.
@@ -456,12 +456,12 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									to large fluctuations in the future. 10.2 You acknowledge that
 									you are solely responsible for determining the nature,
 									potential value, suitability, and appropriateness of these
-									risks for you, and that bitunix does not give advice or
+									risks for you, and that Cashtradepro does not give advice or
 									recommendations. 10.3 Legislative and regulatory changes or
 									actions at the state, federal or international level may
 									adversely affect the use, transfer, exchange and value of
 									digital assets. 11. Indemnity You agree to defend, indemnify
-									and hold harmless bitunix from any claim, demand, action,
+									and hold harmless Cashtradepro from any claim, demand, action,
 									damage, loss, cost or expense, including without limitation
 									reasonable attorneys’ fees, arising out or relating to your
 									violation of these Terms; or your violation of any laws, rules
@@ -500,7 +500,7 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									suspected illegal activity; 13.1.5 disclosure is necessary to
 									investigate violations of these terms. 14. Jurisdiction These
 									Terms shall be governed by and construed in accordance with
-									the laws of Saint Vincent and the Grenadines. Bitunix Fintech
+									the laws of Saint Vincent and the Grenadines. Cashtradepro Fintech
 									LLC, a company incorporated under the laws of Saint Vincent
 									and the Grenadines with its registered address at Euro House,
 									Richmond Hill Road, Kingstown, St. Vincent and the Grenadines,
@@ -519,10 +519,10 @@ const UserAgreementModal = ({ isOpen, onClose }) => {
 									are deemed invalid or unenforceable, the other provisions in
 									these Terms will remain in effect. In the event of any
 									conflict between these Terms and any other agreement you may
-									have with bitunix, the terms of that other agreement will
+									have with Cashtradepro, the terms of that other agreement will
 									prevail only if these Terms are specifically identified and
 									declared to be overridden by such other agreement. Any failure
-									or delay by bitunix to enforce any of these Terms or to
+									or delay by Cashtradepro to enforce any of these Terms or to
 									exercise any right hereunder shall not be construed as a
 									waiver to any extent of our rights.
 								</p>

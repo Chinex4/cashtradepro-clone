@@ -18,7 +18,7 @@ const MobileNavDrawer = ({ isOpen, setIsOpen, navLinks }) => {
           to='/'
           className='text-lime-400 font-bold text-xl italic flex items-center gap-1'
         >
-          <div className='bg-lime-400 rounded-full p-1'></div> Bitunix
+          <div className='bg-lime-400 rounded-full p-1'></div> Cashtradepro
         </Link>
         <button onClick={() => setIsOpen(false)}>
           <X size={24} />

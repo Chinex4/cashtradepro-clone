@@ -3,15 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 const faqs = [
 	{
-		question: 'What are the payment methods Bitunix support?',
+		question: 'What are the payment methods Cashtradeprodepro support?',
 		answer:
-			'Bitunix supports VISA, Mastercard, Apple Pay, and other local payment options depending on your region.',
+			'Cashtradeprodepro supports VISA, Mastercard, Apple Pay, and other local payment options depending on your region.',
 	},
 	{
 		question:
 			'Where can I see my purchased cryptocurrency after I completed the payment?',
 		answer:
-			'Once payment is confirmed, your purchased crypto will appear in your Bitunix wallet under "Assets".',
+			'Once payment is confirmed, your purchased crypto will appear in your Cashtradeprodepro wallet under "Assets".',
 	},
 	{
 		question: 'Are there fees for purchasing cryptocurrency?',

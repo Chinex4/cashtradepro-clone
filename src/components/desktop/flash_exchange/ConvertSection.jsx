@@ -77,7 +77,7 @@ const ConvertSection = () => {
 				0 Fee · No Slippage · More Token Pairs
 			</p>
 
-			<div className='bg-[#121212] border border-zinc-700 rounded-lg p-6 w-full max-w-md'>
+			<div className='bg-[#0d0d0d] border border-zinc-700 rounded-lg p-6 w-full max-w-md'>
 				{/* Pay Section */}
 				<div className='mb-4'>
 					<div className='flex justify-between text-sm text-gray-400 mb-1'>

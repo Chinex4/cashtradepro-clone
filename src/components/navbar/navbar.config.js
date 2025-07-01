@@ -62,7 +62,7 @@ export const notifications = [
   {
     id: 1,
     type: "New Listings",
-    title: "🔥 Civic (CVC) Gets Listed on Bitunix!",
+    title: "🔥 Civic (CVC) Gets Listed on Cashtradepro!",
     content:
       "The CVC/USDT trading pair will be available on both the spot and perpetual futures markets…",
     date: "2025-05-16 10:32:30",
@@ -72,13 +72,13 @@ export const notifications = [
     type: "Latest",
     title: "Notice on Adjustment to Risk Limits of BABY/USDT Perpetual…",
     content:
-      "Bitunix will update the risk limits for BABY/USDT perpetual futures trading pair at 10:00 on May 16, 2025 (UTC)…",
+      "Cashtradepro will update the risk limits for BABY/USDT perpetual futures trading pair at 10:00 on May 16, 2025 (UTC)…",
     date: "2025-05-16 08:58:55",
   },
   {
     id: 3,
     type: "New Listings",
-    title: "🚀 NEXPACE (NXPC) Gets Listed on Bitunix!",
+    title: "🚀 NEXPACE (NXPC) Gets Listed on Cashtradepro!",
     content:
       "The NXPC/USDT trading pair will be available on both the spot and perpetual futures markets…",
     date: "2025-05-15 08:54:55",
@@ -86,7 +86,7 @@ export const notifications = [
   {
     id: 4,
     type: "New Listings",
-    title: "📢 Privasea AI (PRAI) Gets Listed on Bitunix!",
+    title: "📢 Privasea AI (PRAI) Gets Listed on Cashtradepro!",
     content:
       "Privasea AI (PRAI) is getting listed with the PRAI/USDT trading pair on the spot market…",
     date: "2025-05-15 08:37:52",

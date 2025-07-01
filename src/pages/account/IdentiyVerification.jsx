@@ -130,7 +130,7 @@ const IdentityVerification = () => {
 			<div className='border border-[#333] rounded-lg p-4 space-y-4 text-white'>
 				<h3 className='text-lg font-semibold'>Institutional certification</h3>
 				<p className='text-sm text-gray-400'>
-					Level up your trading experience with Bitunix business account
+					Level up your trading experience with Cashtradepro business account
 				</p>
 
 				<div className='w-full flex flex-col lg:flex-row lg:justify-between lg:items-center gap-3 lg:gap-0'>

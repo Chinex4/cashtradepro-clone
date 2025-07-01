@@ -35,7 +35,7 @@ const UserMobileDrawer = ({
           className='text-lime-400 font-bold text-xl italic flex items-center gap-1'
           onClick={() => setIsUserOpen(false)}
         >
-          <div className='bg-lime-400 rounded-full p-1'></div> Bitunix
+          <div className='bg-lime-400 rounded-full p-1'></div> Cashtradepro
         </Link>
         <button onClick={() => setIsUserOpen(false)}>
           <X size={24} />

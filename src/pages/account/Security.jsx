@@ -157,7 +157,7 @@ const Security = () => {
               <div>
                 <p className='font-semibold text-sm'>Anti-Phishing Code</p>
                 <p className='text-xs text-white/35'>
-                  Included in all official Bitunix emails.
+                  Included in all official Cashtradepro emails.
                 </p>
               </div>
             </div>

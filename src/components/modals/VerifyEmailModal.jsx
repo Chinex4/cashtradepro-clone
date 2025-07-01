@@ -108,7 +108,7 @@ const VerifyEmailModal = ({ isOpen, setIsOpen, userEmail, onResend }) => {
                   </span>
                 </p>
                 <p className='text-xs text-gray-400 mb-6'>
-                  If you can't find the verification code from [Bitunix] in your
+                  If you can't find the verification code from [Cashtradepro] in your
                   inbox, please check your spam folder and move it back to the
                   inbox.
                 </p>
@@ -216,7 +216,7 @@ const VerifyEmailModal = ({ isOpen, setIsOpen, userEmail, onResend }) => {
                       Verifying...
                     </div>
                   ) : (
-                    "Access Bitunix"
+                    "Access Cashtradepro"
                   )}
                 </button>
               </Dialog.Panel>

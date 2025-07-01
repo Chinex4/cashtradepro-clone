@@ -20,7 +20,7 @@ const ongoingCampaigns = [
 const pastCampaigns = [
   {
     id: 2,
-    title: `Bitunix Valentine's Day Special Event – Romance Blitz`,
+    title: `Cashtradepro Valentine's Day Special Event – Romance Blitz`,
     endTime: "2025/02/19",
     image: campaignImg2,
     icon: "📢",

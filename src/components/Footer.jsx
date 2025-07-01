@@ -20,7 +20,7 @@ const Footer = () => {
         <div className='flex flex-col gap-2'>
           <div className='flex items-center gap-2'>
             <div className='w-6 h-6 bg-lime-400 rounded-full' />
-            <h1 className='text-lime-400 text-lg font-bold'>Bitunix</h1>
+            <h1 className='text-lime-400 text-lg font-bold'>Cashtradepro</h1>
           </div>
           <p className='text-sm text-white'>Better Liquidity, Better Trading</p>
         </div>
@@ -31,7 +31,7 @@ const Footer = () => {
           <div className='flex flex-col gap-2'>
             <h4 className='text-white font-semibold mb-2'>About</h4>
             <Link to='#' className='hover:text-white text-sm'>
-              About Bitunix
+              About Cashtradepro
             </Link>
             <Link to='#' className='hover:text-white text-sm'>
               Announcements
@@ -94,7 +94,7 @@ const Footer = () => {
               Help Center
             </Link>
             <Link to='#' className='hover:text-white text-sm'>
-              Contact Bitunix
+              Contact Cashtradepro
             </Link>
             <Link to='#' className='hover:text-white text-sm'>
               Feedback & Suggestions
@@ -140,7 +140,7 @@ const Footer = () => {
 
       {/* Bottom Copyright */}
       <div className='text-center text-xs text-gray-500'>
-        © 2022 - 2025 Bitunix.com. All rights reserved
+        © 2022 - 2025 Cashtradepro.com. All rights reserved
       </div>
 
       {/* Floating Support Icon */}
@@ -177,7 +177,7 @@ const Footer = () => {
               <img src='/favicon.ico' alt='' />
             </button>
             <h2 className='text-white text-xl font-bold mb-4 text-center'>
-              Chat with Bitunix Support
+              Chat with Cashtradepro Support
             </h2>
             <p className='text-gray-400 text-center text-sm'>
               Hi 👋 How can we help you today? <br /> (This is a demo chat

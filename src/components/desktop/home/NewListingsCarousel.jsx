@@ -48,7 +48,7 @@ export default function NewListingsCarousel() {
 				<div className='text-white flex items-center gap-2'>
 					<span>📢</span>
 					<p className='text-xs md:text-sm leading-tight'>
-						MemeFi (MEMEFI) Gets Listed on Bitunix Futures Trading!
+						MemeFi (MEMEFI) Gets Listed on Cashtradepro Futures Trading!
 					</p>
 				</div>
 				<a

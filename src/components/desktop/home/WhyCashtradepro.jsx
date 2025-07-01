@@ -51,11 +51,11 @@ const features = [
 	},
 ];
 
-const WhyBitunix = () => {
+const WhyCashtradepro = () => {
 	return (
 		<section className='bg-black flex flex-col items-center justify-center mt-16 py-10 px-4'>
 			<h2 className='text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-12 md:mb-24 text-left md:text-center'>
-				Why Bitunix?
+				Why Cashtradepro?
 			</h2>
 
 			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl w-full'>
@@ -81,4 +81,4 @@ const WhyBitunix = () => {
 	);
 };
 
-export default WhyBitunix;
+export default WhyCashtradepro;

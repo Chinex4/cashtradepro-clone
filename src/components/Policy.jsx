@@ -33,7 +33,7 @@ const Policy = ({ isOpen, onClose }) => {
 						leaveTo='opacity-0 scale-95'>
 						<Dialog.Panel className='w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded bg-stone-900 p-6 text-sm text-gray-800 shadow-xl'>
 							<Dialog.Title className='text-xl text-lime-400 font-semibold mb-4'>
-								Bitunix Policy
+								Cashtradepro Policy
 							</Dialog.Title>
 							<button
 								className='absolute top-4 right-6 text-lg text-gray-400 hover:text-black'
@@ -43,25 +43,25 @@ const Policy = ({ isOpen, onClose }) => {
 							<div className='space-y-4 text-justify'>
 								{/* Paste full agreement content here */}
 								<p className='text-white'>
-									Bitunix, a crypto assets trading exchange, operates the
-									website https://www.bitunix.com and related mobile
+									Cashtradepro, a crypto assets trading exchange, operates the
+									website https://www.Cashtradepro.com and related mobile
 									applications (hereinafter referred to as the 'Platforms')
 									dedicated to digital assets-only transactions and provision of
 									related services. Our Privacy Policy (“Privacy Policy”) is
 									designed to help you understand how we collect, use and share
 									your personal information and to assist you in exercising the
-									privacy rights available to you. Bitunix will protect all
+									privacy rights available to you. Cashtradepro will protect all
 									personal information you submit to us when using our products
 									and services. We may use or disclose your personal information
 									in compliance with this Privacy Policy to provide better
 									services to you. By using our products and services, you
 									consent to the practices contained in this Privacy Policy. We
 									may amend this Privacy Policy from time to time and strongly
-									encourage you to review it whenever you access or use Bitunix
+									encourage you to review it whenever you access or use Cashtradepro
 									services to stay informed about our information practices and
 									your privacy rights and choices. If you ever have any
 									questions about changes made to the Privacy Policy, please
-									reach out to support@bitunix.com . 1. Scope of Application
+									reach out to support@Cashtradepro.com . 1. Scope of Application
 									This Privacy Policy applies to: A）your personal information
 									including your name, email address, date of birth, tax number
 									(if applicable), username, password or other personal
@@ -151,7 +151,7 @@ const Policy = ({ isOpen, onClose }) => {
 									information (especially username and passwords on our
 									Platforms) disclosed, you should immediately contact our
 									support for protection measures. 7. Disclaimer of Liability
-									Bitunix assumes no liability or responsibility, to the fullest
+									Cashtradepro assumes no liability or responsibility, to the fullest
 									extent of any applicable law, for: A）any unintentional
 									disclosure; B）disclosure of your personal information because
 									you share with others your account(s) or password(s) on our
@@ -161,7 +161,7 @@ const Policy = ({ isOpen, onClose }) => {
 									third party act affecting our Platforms; D）lawsuits or
 									related damages led by disclosure of your personal information
 									on our external websites. 8. External Websites Occasionally,
-									the Bitunix website may provide references or links to other
+									the Cashtradepro website may provide references or links to other
 									websites ("External Websites"). We do not control these
 									External Websites or any of the content contained therein.
 									External Websites have separate and independent terms of use
@@ -172,7 +172,7 @@ const Policy = ({ isOpen, onClose }) => {
 									out of their use of your information for various purposes. 9.
 									Your Statutory Rights Depending on applicable law, you may
 									have the rights as set out below, which you may exercise by
-									contacting us at support@bitunix.com. A）Access: you are
+									contacting us at support@Cashtradepro.com. A）Access: you are
 									entitled to ask us if we are processing your information and,
 									if we are, you can request access to your personal data. This
 									enables you to receive a copy of the personal data we hold
@@ -210,7 +210,7 @@ const Policy = ({ isOpen, onClose }) => {
 									If you have any questions relating to our privacy policy and
 									your rights and obligations arising from these policy terms,
 									or if you intend to exercise your rights stated in this
-									privacy policy, please contact support@bitunix.com.
+									privacy policy, please contact support@Cashtradepro.com.
 								</p>
 								{/* Repeat rest of the sections here */}
 							</div>

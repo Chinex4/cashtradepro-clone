@@ -7,29 +7,29 @@ import 'swiper/css/pagination';
 
 const reviews = [
 	{
-		title: 'Bitunix Records All-Time Highest Trading Volume In October',
+		title: 'Cashtradepro Records All-Time Highest Trading Volume In October',
 		media: 'BENZINGA Pro',
 		bgColor: 'bg-[#1E1E1E]',
 	},
 	{
-		title: 'Bitunix Exchange Now Supports Visa and Mastercard Payments',
+		title: 'Cashtradepro Exchange Now Supports Visa and Mastercard Payments',
 		media: 'THENEWSCRYPTO',
 		bgColor: 'bg-[#00B8F0]',
 	},
 	{
-		title: 'Slater Says "Bitunix Prioritizes Compliance and User Education"',
+		title: 'Slater Says "Cashtradepro Prioritizes Compliance and User Education"',
 		media: 'yahoo! finance',
 		bgColor: 'bg-[#A855F7]',
 	},
 	{
 		title:
-			'Bitunix at Blockchain Economy Summit Dubai 2023: Highlights of First Exhibit',
+			'Cashtradepro at Blockchain Economy Summit Dubai 2023: Highlights of First Exhibit',
 		media: 'NEWSBTC',
 		bgColor: 'bg-[#00B8F0]',
 	},
 	{
 		title:
-			'Bitunix at Blockchain Economy Summit Dubai 2023: Highlights of First Exhibit',
+			'Cashtradepro at Blockchain Economy Summit Dubai 2023: Highlights of First Exhibit',
 		media: 'NEWSBTC',
 		bgColor: 'bg-[#00B8F0]',
 	},
@@ -39,7 +39,7 @@ const ReviewsSection = () => {
 	return (
 		<section className='bg-black flex flex-col items-center justify-center py-16 px-4 overflow-hidden'>
 			<h2 className='text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-12 lg:mb-8 text-left md:text-center leading-tight'>
-				Reviews of Bitunix from Worldwide Media
+				Reviews of Cashtradepro from Worldwide Media
 			</h2>
 
 			<div className='w-full max-w-6xl'>

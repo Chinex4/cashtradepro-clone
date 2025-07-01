@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaApple, FaGooglePlay } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
 
-const BitunixApp = () => {
+const CashtradeproApp = () => {
 	const [deferredPrompt, setDeferredPrompt] = useState(null);
 
 	useEffect(() => {
@@ -14,7 +14,7 @@ const BitunixApp = () => {
 			toast(
 				(t) => (
 					<div className='text-sm'>
-						<p className='mb-2 font-medium'>Install Bitunix App?</p>
+						<p className='mb-2 font-medium'>Install Cashtradepro App?</p>
 						<div className='flex gap-2'>
 							<button
 								onClick={() => {
@@ -94,7 +94,7 @@ const BitunixApp = () => {
 						<div className='flex md:hidden justify-center pt-4'>
 							<img
 								src='/svgIcons/laptop-phone.webp'
-								alt='Bitunix Devices'
+								alt='Cashtradepro Devices'
 								className='w-full max-w-xs object-contain'
 							/>
 						</div>
@@ -140,7 +140,7 @@ const BitunixApp = () => {
 					<div className='hidden md:flex justify-center'>
 						<img
 							src='/svgIcons/laptop-phone.webp'
-							alt='Bitunix Devices'
+							alt='Cashtradepro Devices'
 							className='w-full max-w-md object-contain'
 						/>
 					</div>
@@ -150,4 +150,4 @@ const BitunixApp = () => {
 	);
 };
 
-export default BitunixApp;
+export default CashtradeproApp;
