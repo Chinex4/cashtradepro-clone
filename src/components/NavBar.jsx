@@ -32,6 +32,11 @@ const Navbar = () => {
 
   const uid = fetchedUser?.message?.userDetails.uid ?? "";
   const email = fetchedUser?.message?.userDetails.email ?? "";
+  const userPic = fetchedUser?.message?.userDetails?.image;
+
+  const userImage = userPic?.startsWith('"') ? JSON.parse(userPic) : userPic;
+
+  const selectedImage = userImage === null ? '/avatar/a1.png' : userImage;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -105,6 +110,7 @@ const Navbar = () => {
               setShowUID={setShowUID}
               handleCopy={handleCopy}
               handleLogout={handleLogout}
+              selectedImage={selectedImage}
             />
             <QrDropdown />
             <NotificationDropdown
