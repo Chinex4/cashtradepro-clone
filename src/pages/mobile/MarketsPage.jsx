@@ -69,7 +69,7 @@ export default function MarketsPage() {
 			fetchMarketData();
 		}
 
-		const saved = localStorage.getItem('bitunix-favorites');
+		const saved = localStorage.getItem('Cashtradepro-favorites');
 		if (saved) setFavorites(JSON.parse(saved));
 	}, [activeTab]);
 
@@ -81,7 +81,7 @@ export default function MarketsPage() {
 			updated.push(id);
 		}
 		setFavorites(updated);
-		localStorage.setItem('bitunix-favorites', JSON.stringify(updated));
+		localStorage.setItem('Cashtradepro-favorites', JSON.stringify(updated));
 	};
 
 	const displayedData =

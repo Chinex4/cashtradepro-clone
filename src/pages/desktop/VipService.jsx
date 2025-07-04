@@ -174,12 +174,12 @@ const VipService = () => {
 				</p>
 				<p>
 					VIP users of other exchanges can instantly get a better VIP level on
-					Bitunix. Simply send an email with your Bitunix UID & a screenshot
+					Cashtradepro. Simply send an email with your Cashtradepro UID & a screenshot
 					showing your 30 day trading volume on other exchanges to{' '}
 					<a
-						href='mailto:vip@bitunix.com'
+						href='mailto:vip@Cashtradepro.com'
 						className='text-lime-400 underline'>
-						vip@bitunix.com
+						vip@Cashtradepro.com
 					</a>
 				</p>
 			</div>

@@ -74,19 +74,19 @@ const Signup = () => {
 			<div className='grid grid-cols-1 lg:grid-cols-2 min-h-screen'>
 				{/* Left side image/marketing */}
 				<div className='hidden lg:flex items-center justify-center bg-black text-white px-8'>
-					<div className='text-center'>
+					<div className='text-center flex flex-col-reverse'>
 						<img
 							src='/mobile/signup-img.webp' // Update your image path
-							alt='Bitunix vending'
-							className='max-w-sm mx-auto mb-6'
+							alt='Cashtradepro vending'
+							className='max-w-md mx-auto mb-6'
 						/>
-						<h2 className='text-2xl font-bold mb-2'>
-							Exclusive for newcomers!
-						</h2>
 						<p className='text-lime-400 text-lg font-semibold'>
 							Avail 8000+ USDT Worth of <br />
 							Newcomer Rewards
 						</p>
+						<h2 className='text-3xl font-bold mb-2'>
+							Exclusive for newcomers!
+						</h2>
 					</div>
 				</div>
 
@@ -225,13 +225,13 @@ const Signup = () => {
 								<button
 									onClick={() => setAgreementOpen(true)}
 									className='underline text-lime-400'>
-									Bitunix User Agreement
+									Cashtradepro User Agreement
 								</button>{' '}
 								and{' '}
 								<button
 									onClick={() => setPolicyOpen(true)}
 									className='underline text-lime-400'>
-									Bitunix Privacy Policy
+									Cashtradepro Privacy Policy
 								</button>
 								.
 							</p>

@@ -63,9 +63,9 @@ const Login = () => {
       <div className='md:min-h-screen grid grid-cols-1 lg:grid-cols-2'>
         {/* Left (desktop only) */}
         <div className='hidden lg:flex items-center justify-center bg-black text-white px-8'>
-          <div className='text-center'>
+          <div className='text-center flex flex-col-reverse'>
             <img
-              src='/mobile/login-img.webp'
+              src='/mobile/login-imagee.webp'
               alt='Cashtradepro chest'
               className='max-w-sm mx-auto mb-6'
             />

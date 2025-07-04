@@ -19,8 +19,7 @@ const Footer = () => {
         {/* Logo and Slogan */}
         <div className='flex flex-col gap-2'>
           <div className='flex items-center gap-2'>
-            <div className='w-6 h-6 bg-lime-400 rounded-full' />
-            <h1 className='text-lime-400 text-lg font-bold'>Cashtradepro</h1>
+            <img className="w-[120px]" src="cashtradepro-logo2.png" alt="" />
           </div>
           <p className='text-sm text-white'>Better Liquidity, Better Trading</p>
         </div>
