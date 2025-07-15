@@ -37,7 +37,7 @@ const AccountHeader = () => {
 	return (
 		<>
 			{/* Mobile Scrollable Tabs */}
-			<div className='block lg:hidden'>
+			<div className='block lg:hidden mt-4.5'>
 				<div className='flex items-center gap-2 mb-6'>
 					<button
 						onClick={() => scroll('left')}

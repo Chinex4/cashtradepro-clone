@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import GoBack from "../../components/ui/GoBack";
 import { Dialog, Transition } from "@headlessui/react";
 import axiosInstance from "../../api/axiosInstance";
+import { X } from "lucide-react";
 
 const BindGoogleAuthenticator = () => {
   const [code, setCode] = useState("");
@@ -16,24 +17,23 @@ const BindGoogleAuthenticator = () => {
   const [secret, setSecret] = useState("");
 
   useEffect(() => {
-    axiosInstance.get("/generate-2fa").then((res) => {
-      setSecret(res.data.message.secret); // Optionally show or store for backup
+    axiosInstance.get("/user/generate2fa").then((res) => {
+      setSecret(res.data.message); // Optionally show or store for backup
     });
   }, []);
-  const qrValue = `otpauth://totp/YourAppName?secret=${secret}&issuer=YourApp`;
-
+  // const qrValue = `otpauth://totp/CashTradePro?secret=${secret}&issuer=CashTradePro`;
   const navigate = useNavigate();
 
-  const onBack = () => {
-    navigate(-1);
-  };
+  // const onBack = () => {
+  //   navigate(-1);
+  // };
 
   const handleCopy = () => {
     navigator.clipboard.writeText(secret).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
-    showSuccess("Backup Key Copied");
+    showSuccess("Copied to clipboard");
   };
 
   const handleSubmit = (e) => {
@@ -45,7 +45,7 @@ const BindGoogleAuthenticator = () => {
   const confirmVerification = async () => {
     setIsVerifying(true);
     try {
-      const res = await axiosInstance.post("/2fa/verify", { token: code });
+      const res = await axiosInstance.post("/user/verify2fa", { token: code });
       if (res.data.success) {
         setVerifyMessage("✅ Code verified successfully!");
         showSuccess("Google Authenticator linked!");
@@ -100,31 +100,38 @@ const BindGoogleAuthenticator = () => {
       </div>
 
       {/* Step 2 */}
-      <div className='mb-6'>
-        <h3 className='font-semibold mb-2'>2. Configure and backup the key.</h3>
-        <p className='text-sm text-gray-300 mb-2'>
+      <div className='mb-6 text-center'>
+        <h3 className='font-semibold mb-2 text-left sm:text-center'>
+          2. Configure and backup the key.
+        </h3>
+        <p className='text-sm text-gray-300 mb-2 text-left sm:text-center'>
           Open Google Authenticator and scan the QR code or manually enter the
           key below to add the verification token.
         </p>
-        <p className='text-sm text-red-500 font-medium mb-3'>
+        <p className='text-sm text-red-500 font-medium mb-4 text-left sm:text-center'>
           In case you lose Google Authenticator, you can recover it using the
           provided key. Keep the key safe and do not share it with anyone.
         </p>
-        <div className='flex items-center gap-3 mb-2'>
-          <QRCodeCanvas value={qrValue} size={128} />
-          <div>
-            <p className='mt-3 font-semibold'>{secret}</p>
-            <button
-              onClick={handleCopy}
-              className='text-green-400 text-sm mt-1 flex items-center gap-1'
-            >
-              {copied ?
-                <>
-                  <Check className='w-4 h-4' /> Copied
-                </>
-              : "Copy the key"}
-            </button>
-          </div>
+
+        <div className='flex flex-col items-center gap-2'>
+          <img
+            src={secret?.qr}
+            alt='Qrcode'
+            className='w-32 h-32 sm:w-40 sm:h-40'
+          />
+          <p className='font-semibold text-lg tracking-wider'>
+            {secret.secret}
+          </p>
+          <button
+            onClick={handleCopy}
+            className='text-green-400 text-sm mt-1 flex items-center gap-1'
+          >
+            {copied ?
+              <>
+                <Check className='w-4 h-4' /> Copied
+              </>
+            : "Copy the key"}
+          </button>
         </div>
       </div>
 
@@ -134,19 +141,34 @@ const BindGoogleAuthenticator = () => {
           3. Enter Google Authenticator code to verify
         </h3>
         <form onSubmit={handleSubmit}>
-          <input
-            type='text'
-            placeholder='Enter code'
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            className='w-full p-2 rounded bg-[#1f1f1f] text-white border border-gray-600 mb-4'
-          />
+          <div className='relative w-full mb-4'>
+            <input
+              type='text'
+              inputMode='numeric'
+              pattern='[0-9]*'
+              placeholder='Enter code'
+              value={code}
+              onChange={(e) => setCode(e.target.value.replace(/\D/, ""))}
+              maxLength={6}
+              className='w-full p-2 pr-10 rounded bg-[#1f1f1f] text-white border focus:border-newGreen active:border-newGreen border-gray-600 outline-0'
+            />
+            {code && (
+              <button
+                type='button'
+                onClick={() => setCode("")}
+                className='absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white focus:outline-none'
+              >
+                <X className='w-4 h-4' />
+              </button>
+            )}
+          </div>
+
           <button
             type='submit'
             disabled={!code}
             className={`w-full py-2 rounded ${
               code ?
-                "bg-white text-black"
+                "bg-newGreen text-black"
               : "bg-gray-700 text-gray-500 cursor-not-allowed"
             }`}
           >

@@ -38,7 +38,9 @@ export default function ChangePassword() {
 		console.log('Submitted data:', data);
 		// Handle password change logic here
 	};
-
+const createdAt = new Date().toLocaleString("en-US", {
+    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+  });
 	const handleGetCode = () => {
 		setSendingCode(true);
 		setTimeout(() => setSendingCode(false), 2000);
@@ -52,7 +54,7 @@ export default function ChangePassword() {
 				className='mb-4 flex items-center text-gray-300 hover:text-white'>
 				<ArrowLeft
 					className='mr-2'
-					size={18}
+					size={15}
 				/>
 				<span className='text-sm'>Back</span>
 			</button>
@@ -75,13 +77,13 @@ export default function ChangePassword() {
 							type={showCurrent ? 'text' : 'password'}
 							{...register('currentPassword')}
 							placeholder='Please enter your current password'
-							className='w-full bg-zinc-900 border border-gray-700 px-4 py-2 rounded-md text-sm pr-10'
+							className='w-full bg-zinc-900 border outline-0 focus:border-newGreen border-gray-700 px-4 py-2 rounded-md text-sm pr-10'
 						/>
 						<button
 							type='button'
 							className='absolute right-3 top-2.5 text-gray-400'
 							onClick={() => setShowCurrent((prev) => !prev)}>
-							{showCurrent ? <EyeOff size={18} /> : <Eye size={18} />}
+							{showCurrent ? <EyeOff size={15} /> : <Eye size={15} />}
 						</button>
 					</div>
 					{errors.currentPassword && (
@@ -99,13 +101,13 @@ export default function ChangePassword() {
 							type={showNew ? 'text' : 'password'}
 							{...register('newPassword')}
 							placeholder='Please enter a new password'
-							className='w-full bg-zinc-900 border border-gray-700 px-4 py-2 rounded-md text-sm pr-10'
+							className='w-full bg-zinc-900 border outline-0 focus:border-newGreen border-gray-700 px-4 py-2 rounded-md text-sm pr-10'
 						/>
 						<button
 							type='button'
 							className='absolute right-3 top-2.5 text-gray-400'
 							onClick={() => setShowNew((prev) => !prev)}>
-							{showNew ? <EyeOff size={18} /> : <Eye size={18} />}
+							{showNew ? <EyeOff size={15} /> : <Eye size={15} />}
 						</button>
 					</div>
 					{errors.newPassword && (
@@ -125,13 +127,13 @@ export default function ChangePassword() {
 							type={showConfirm ? 'text' : 'password'}
 							{...register('confirmPassword')}
 							placeholder='Please re-enter your new password'
-							className='w-full bg-zinc-900 border border-gray-700 px-4 py-2 rounded-md text-sm pr-10'
+							className='w-full bg-zinc-900 border outline-0 focus:border-newGreen border-gray-700 px-4 py-2 rounded-md text-sm pr-10'
 						/>
 						<button
 							type='button'
 							className='absolute right-3 top-2.5 text-gray-400'
 							onClick={() => setShowConfirm((prev) => !prev)}>
-							{showConfirm ? <EyeOff size={18} /> : <Eye size={18} />}
+							{showConfirm ? <EyeOff size={15} /> : <Eye size={15} />}
 						</button>
 					</div>
 					{errors.confirmPassword && (
@@ -142,33 +144,35 @@ export default function ChangePassword() {
 				</div>
 
 				{/* Email Verification */}
-				<div>
-					<h3 className='font-semibold text-base mb-2'>
-						Security Verification
-					</h3>
-					<label className='block text-sm mb-1'>
-						Email Verification ({maskEmail(email)})
-					</label>
-					<div className='flex'>
-						<input
-							type='text'
-							{...register('emailCode')}
-							placeholder='Enter code'
-							className='flex-1 bg-zinc-900 border border-gray-700 px-4 py-2 rounded-l-md text-sm'
-						/>
-						<button
-							type='button'
-							onClick={handleGetCode}
-							className='bg-zinc-800 border border-l-0 border-gray-700 px-4 py-2 text-sm rounded-r-md text-lime-400 hover:text-lime-300'>
-							{sendingCode ? 'Sending...' : 'Get code'}
-						</button>
-					</div>
-					{errors.emailCode && (
-						<p className='text-red-500 text-sm mt-1'>
-							{errors.emailCode.message}
-						</p>
-					)}
-				</div>
+			<div>
+  <h3 className='font-semibold text-base mb-2'>Security Verification</h3>
+  <label className='block text-sm mb-1'>
+    Email Verification ({maskEmail(email)})
+  </label>
+
+  <div className='relative'>
+    <input
+      type='text'
+      {...register('emailCode')}
+      placeholder='Enter code'
+      className='w-full bg-zinc-900 border border-gray-700 outline-none focus:border-newGreen text-sm text-white px-4 py-2 pr-24 rounded-md'
+    />
+    <button
+      type='button'
+      onClick={handleGetCode}
+      className='absolute right-3 top-1/2 -translate-y-1/2 text-lime-400 text-sm hover:text-lime-300'
+    >
+      {sendingCode ? 'Sending...' : 'Get code'}
+    </button>
+  </div>
+
+  {errors.emailCode && (
+    <p className='text-red-500 text-sm mt-1'>
+      {errors.emailCode.message}
+    </p>
+  )}
+</div>
+
 
 				{/* Submit */}
 				<button

@@ -7,8 +7,9 @@
 	--color-primary: #dc1436;
 	--color-neutral: #8c8c8c;
 	--color-darkk: #1b1b1b;
-
+	--color-newGreen:#b9f641;
 	--font-mont: 'Montserrat', 'sans-serif';
+	--outline-none:'none';
 }
 
 @plugin "daisyui" {
