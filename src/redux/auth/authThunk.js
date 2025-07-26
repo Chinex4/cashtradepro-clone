@@ -99,6 +99,7 @@ export const resendOtp = createAsyncThunk(
 		}
 	}
 );
+
 export const loginUser = createAsyncThunk(
 	'auth/loginUser',
 	async (formData, { rejectWithValue }) => {

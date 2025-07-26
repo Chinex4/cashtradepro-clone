@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axiosInstance from '../../api/axiosInstance';
+import { showError, showSuccess } from '../../utils/toast';
 export const fetchLoggedInUser = createAsyncThunk(
 	'user/fetchLoggedInUser',
 	async (_, { rejectWithValue }) => {
@@ -20,6 +21,65 @@ export const fetchLoggedInUser = createAsyncThunk(
 			return rejectWithValue(
 				error.response?.data?.errors || 'Failed to fetch user'
 			);
+		}
+	}
+);
+export const generateChangePasswordOtp = createAsyncThunk(
+	'auth/verifyEmailOtp',
+	async ({ email, createdAt, navigate }, { rejectWithValue }) => {
+		try {
+			const res = await axiosInstance.post('user/generateChangePasswordOtp', {
+				email,
+				createdAt,
+			});
+
+			if (res.status === 200) {
+				showSuccess('OTP sent to your email');
+				// setTimeout(() => {
+				// 	navigate('/account/change-password');
+				// }, 2000);				
+			}
+		} catch (err) {
+			showError(err?.response?.data?.errors || 'OTP verification failed');
+			return rejectWithValue(err?.response?.data?.errors);
+		}
+	}
+);
+export const resendChangePasswordOtp = createAsyncThunk(
+	'auth/resendOtp',
+	async ({ email, createdAt }, { rejectWithValue }) => {
+		try {
+			const res = await axiosInstance.post('user/resendChangePasswordOtp', {
+				email,
+				createdAt,
+			});
+			showSuccess('OTP resent to email');
+			return res.data;
+		} catch (err) {
+			showError(err?.response?.data?.errors || 'Failed to resend OTP');
+			return rejectWithValue(err.response?.data?.errors);
+		}
+	}
+);
+export const verifyChangePasswordOtp = createAsyncThunk(
+	'auth/verifyEmailOtp',
+	async ({ email, otp, createdAt, navigate }, { rejectWithValue }) => {
+		try {
+			const res = await axiosInstance.post('user/verifyChangePasswordOtp', {
+				email,
+				otp,
+				createdAt,
+			});
+
+			if (res.status === 200) {
+				showSuccess('OTP verified successfully');
+				// setTimeout(() => {
+				// 	navigate('/account/change-password');
+				// }, 2000);
+			}
+		} catch (err) {
+			showError(err?.response?.data?.errors || 'OTP verification failed');
+			return rejectWithValue(err?.response?.data?.errors);
 		}
 	}
 );
