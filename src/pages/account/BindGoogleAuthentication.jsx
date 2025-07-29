@@ -46,11 +46,11 @@ const BindGoogleAuthenticator = () => {
         {
           loading: 'Verifying 2FA code...',
           success: () => {
-            showSuccess(
-              'Google Auth verification is pending. Please verify email.',
-            );
+            // showSuccess(
+            //   'Google Auth verification is pending. Please verify email.',
+            // );
             setShowEmailModal(true); // now open modal AFTER 2FA success
-            return 'Verification code accepted';
+            return ;
           },
           error: 'Invalid verification code or failed to link.',
         },

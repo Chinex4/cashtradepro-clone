@@ -56,7 +56,7 @@ export const verifyGoogleAuthOtp = createAsyncThunk(
       });
 
       if (res.status === 200) {
-        showSuccess('OTP verified successfully');
+        // showSuccess('OTP verified successfully');
         setTimeout(() => {
         	navigate('/account/security');
         }, 2000);
