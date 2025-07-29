@@ -131,7 +131,7 @@ const VerifyEmailModal2FA = ({
                     onClick={handleResend}
                     className="absolute right-2 top-1/2 -translate-y-1/2 px-3 py-1 text-sm font-medium text-black bg-transparent disabled:text-gray-300 disabled:cursor-not-allowed"
                   >
-                    {cooldown > 0 ? `Resend ${cooldown}s` : "Get code"}
+                    {cooldown > 0 ? `Resend in ${cooldown}s` : "Get code"}
                   </button>
                 </div>
                 {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
@@ -146,7 +146,7 @@ const VerifyEmailModal2FA = ({
                       : "bg-black hover:bg-gray-900"
                   }`}
                 >
-                  {loading ? "Verifying..." : "Log in"}
+                  {loading ? "Verifying..." : "Verify"}
                 </button>
               </Dialog.Panel>
             </Transition.Child>
