@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import GoBack from "../../components/ui/GoBack";
 import axiosInstance from "../../api/axiosInstance";
 import { useDispatch, useSelector } from "react-redux";
-import { generateLoginOtp } from "../../redux/auth/authThunk";
+import { generateGoogleAuthOtp } from "../../redux/user/userThunk";
+import { verifyGoogleAuthOtp } from "../../redux/user/userThunk";
 import VerifyEmailModal2FA from "../../components/modals/VerifyEmaiModal2FA";
 import useFetchLoggedInUser from "../../hooks/useFetchedLoggedInUser";
 
@@ -195,7 +196,7 @@ const BindGoogleAuthenticator = () => {
             const createdAt = new Date().toLocaleString("en-US", {
               timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
             });
-            dispatch(generateLoginOtp({ email: userEmail, createdAt }));
+            dispatch(generateGoogleAuthOtp({ email: userEmail, createdAt }));
           }}
           onSuccess={handleEmailOtpVerified}
         />

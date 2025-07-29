@@ -24,6 +24,50 @@ export const fetchLoggedInUser = createAsyncThunk(
 		}
 	}
 );
+export const generateGoogleAuthOtp = createAsyncThunk(
+  'auth/generateGoogleAuthOtp',
+  async ({ email, createdAt, navigate }, { rejectWithValue }) => {
+    try {
+      const res = await axiosInstance.post('user/generateGoogleAuthOtp', {
+        email,
+        createdAt,
+      });
+
+      if (res.status === 200) {
+        showSuccess('Email OTP sent successfully');
+        // setTimeout(() => {
+        //   navigate('/security');
+        // }, 2000);
+      }
+    } catch (err) {
+      showError(err?.response?.data?.errors || 'OTP failed To Send');
+      return rejectWithValue(err?.response?.data?.errors);
+    }
+  },
+);
+export const verifyGoogleAuthOtp = createAsyncThunk(
+  'auth/verifyEmailOtp',
+  async ({ email, otp, createdAt, navigate }, { rejectWithValue }) => {
+    try {
+      const res = await axiosInstance.post('user/verifyGoogleAuthOtp', {
+        email,
+        otp,
+        createdAt,
+      });
+
+      if (res.status === 200) {
+        showSuccess('OTP verified successfully');
+        setTimeout(() => {
+        	navigate('/account/security');
+        }, 2000);
+      }
+    } catch (err) {
+      showError(err?.response?.data?.errors || 'OTP verification failed');
+      return rejectWithValue(err?.response?.data?.errors);
+    }
+  },
+);
+
 export const generateChangePasswordOtp = createAsyncThunk(
 	'auth/verifyEmailOtp',
 	async ({ email, createdAt, navigate }, { rejectWithValue }) => {
