@@ -113,13 +113,15 @@ const VerifyEmailModal2FA = ({
 
                 <div className='border-t border-gray-200 mb-4' />
 
-                <p className='text-sm text-gray-800 mb-4'>
-                  Email Verification (
+                <p className='text-xs text-gray-800 mb-4 text-left'>
+                  For added security, please verify your email (
                   {userEmail.replace(
                     /(.{2})(.*)(@.*)/,
                     (_, a, b, c) => a + '*'.repeat(b.length) + c,
                   )}
-                  )
+                  ) by entering the
+                  6-digit code sent to your inbox. This step ensures that only
+                  you can complete the 2FA setup for your account. 
                 </p>
 
                 {/* OTP input with Get Code */}

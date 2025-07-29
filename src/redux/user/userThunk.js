@@ -34,7 +34,7 @@ export const generateGoogleAuthOtp = createAsyncThunk(
       });
 
       if (res.status === 200) {
-        showSuccess('Email OTP sent successfully');
+        // showSuccess('Email OTP sent successfully');
         // setTimeout(() => {
         //   navigate('/security');
         // }, 2000);

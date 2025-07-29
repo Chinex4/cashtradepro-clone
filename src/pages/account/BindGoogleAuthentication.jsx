@@ -52,7 +52,7 @@ const BindGoogleAuthenticator = () => {
             setShowEmailModal(true); // now open modal AFTER 2FA success
             return 'Verification code accepted';
           },
-          error: '❌ Invalid verification code or failed to link.',
+          error: 'Invalid verification code or failed to link.',
         },
       );
     } catch (err) {
@@ -62,25 +62,8 @@ const BindGoogleAuthenticator = () => {
 
   const handleEmailOtpVerified = async () => {
     setShowEmailModal(false);
-    setIsVerifying(true);
-    try {
-      await showPromise(
-        axiosInstance.post('/user/verify2fa', { token: code }),
-        {
-          loading: 'Verifying 2FA code...',
-          success: () => {
-            showSuccess('Google Authenticator linked successfully!');
-            navigate('/account/security');
-            return 'Success';
-          },
-          error: '❌ Invalid verification code or failed to link.',
-        },
-      );
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setIsVerifying(false);
-    }
+    navigate('/account/security');
+    showSuccess('Google Authenticator successfully bound to your account');
   };
 
   return (
@@ -132,27 +115,29 @@ const BindGoogleAuthenticator = () => {
           provided key. Keep the key safe and do not share it with anyone.
         </p>
 
-        <div className='flex flex-col items-center gap-2'>
+        <div className='flex gap-4'>
           <img
             src={secret?.qr}
             alt='Qrcode'
             className='w-32 h-32 sm:w-40 sm:h-40'
           />
-          <p className='font-semibold text-lg tracking-wider'>
-            {secret?.secret}
-          </p>
-          <button
-            onClick={handleCopy}
-            className='text-green-400 text-sm mt-1 flex items-center gap-1 cursor-pointer'
-          >
-            {copied ? (
-              <>
-                <Check className='w-4 h-4' /> Copied
-              </>
-            ) : (
-              'Copy the key'
-            )}
-          </button>
+          <div className='flex flex-col justify-center'>
+            <p className='font-semibold text-lg tracking-wider'>
+              {secret?.secret}
+            </p>
+            <button
+              onClick={handleCopy}
+              className='text-green-400 text-sm mt-1 flex items-center gap-1 cursor-pointer'
+            >
+              {copied ? (
+                <>
+                  <Check className='w-4 h-4' /> Copied
+                </>
+              ) : (
+                'Copy the key'
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -193,7 +178,7 @@ const BindGoogleAuthenticator = () => {
                 : 'bg-gray-700 text-gray-500 cursor-not-allowed'
             }`}
           >
-            {isVerifying ? 'Verifying...' : 'Submit'}
+            {isVerifying ? 'Processing...' : 'Verify 2FA Code'}
           </button>
         </form>
       </div>

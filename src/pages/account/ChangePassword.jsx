@@ -103,8 +103,10 @@ export default function ChangePassword() {
 
     await showPromise(dispatch(thunk({ email, createdAt, navigate })), {
       loading: label,
-      success: otpSent ? "OTP resent successfully" : "OTP sent successfully",
-      error: "Failed to send OTP",
+      success: otpSent
+        ? 'Email verification code has been resent to your email'
+        : 'Email verification code has been sent to your email',
+      error: 'Failed to send OTP',
     });
 
     setOtpSent(true);
