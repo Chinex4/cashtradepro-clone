@@ -20,31 +20,38 @@ import { useState } from 'react';
 import WithdrawalSecurity from './WithdrawalSecurity';
 import SecurityLevelBar from './SecurityLevelBar';
 import GoogleAuthDisableModal from '../../components/modals/GoogleAuthDisableModal'; // adjust path
+import { showPromise } from './../../utils/toast';
+import { useDispatch } from 'react-redux';
+import { disableGoogleAuth } from '../../redux/user/userThunk';
 
 const Security = () => {
   const { user: fetchedUser, error, loading } = useFetchLoggedInUser();
   const email = fetchedUser?.message?.userDetails.email ?? '';
   const uid = fetchedUser?.message?.userDetails.uid ?? '';
   const isGoogleAuthEnabled =
-    fetchedUser?.message?.userDetails.isGoogleAuthEnabled ?? '';
+    fetchedUser?.message?.userDetails.isGoogleAUthEnabled ?? '';
   const [showUID, setShowUID] = useState(false);
   const handleCopy = () => {
     navigator.clipboard.writeText(uid);
     showSuccess('UID copied!');
   };
-  const securityLevel = isGoogleAuthEnabled ? 'high' : 'low';
+  const securityLevel = isGoogleAuthEnabled === 'Verified' ? 'high' : 'low';
 
   // Inside your component
   const [disableModalOpen, setDisableModalOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const handleDisableClick = () => {
     setDisableModalOpen(true);
   };
 
   const handleDisableConfirm = () => {
+    showPromise(dispatch(disableGoogleAuth()), {
+      loading: 'Disabling...',
+      success: 'Google Auth disabled successfully',
+      error: 'Failed to disable Google Auth',
+    });
     setDisableModalOpen(false);
-    // TODO: Call backend API or dispatch disable action
-    showSuccess('2FA Disabled Successfully');
   };
   return (
     <div className='p-4 md:p-8 text-white max-w-6xl'>
@@ -100,7 +107,7 @@ const Security = () => {
               </div>
             </div>
             <div className='flex gap-2 items-center'>
-              {isGoogleAuthEnabled && (
+              {isGoogleAuthEnabled === 'Verified' && (
                 <button
                   onClick={handleDisableClick}
                   className='text-stone-400 border border-stone-400 text-xs px-3 py-1 rounded'
@@ -113,7 +120,7 @@ const Security = () => {
                 to={'/account/security/bind-google-auth'}
                 className='text-lime-400 border border-lime-400 text-xs px-3 py-1 rounded'
               >
-                {isGoogleAuthEnabled ? 'Change' : 'Set up'}
+                {isGoogleAuthEnabled === 'Verified' ? 'Change' : 'Set up'}
               </Link>
             </div>
           </div>

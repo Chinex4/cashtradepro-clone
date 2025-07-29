@@ -67,6 +67,19 @@ export const verifyGoogleAuthOtp = createAsyncThunk(
     }
   },
 );
+export const disableGoogleAuth = createAsyncThunk(
+  'user/disableGoogleAuth',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axiosInstance.post('/user/disableGoogleAuth');
+      return response.data.message;
+    } catch (error) {
+      const message =
+        error.response?.data?.message || 'Failed to disable Google Auth';
+      return rejectWithValue(message);
+    }
+  },
+);
 
 export const generateChangePasswordOtp = createAsyncThunk(
 	'auth/verifyEmailOtp',
