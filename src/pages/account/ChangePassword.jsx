@@ -88,7 +88,7 @@ export default function ChangePassword() {
       );
 
       // Optionally navigate away
-      navigate("/security"); // or any success page
+      navigate("/account/security"); // or any success page
     } catch (err) {
       console.error("Password change flow failed:", err);
       // Errors are already shown via showPromise
