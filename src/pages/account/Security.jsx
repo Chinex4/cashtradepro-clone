@@ -29,7 +29,7 @@ const Security = () => {
   const email = fetchedUser?.message?.userDetails.email ?? "";
   const uid = fetchedUser?.message?.userDetails.uid ?? "";
   const isGoogleAuthEnabled =
-    fetchedUser?.message?.userDetails?.isGoogleAUthEnabled == "Verified" ?? "";
+    fetchedUser?.message?.userDetails?.isGoogleAUthEnabled ?? "";
 
   const [showUID, setShowUID] = useState(false);
   const handleCopy = () => {

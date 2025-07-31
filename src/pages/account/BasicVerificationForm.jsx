@@ -63,7 +63,7 @@ export default function BasicVerificationForm() {
 	if (proceedToUpload) {
 		return (
 			<UploadIDPage
-				data={formData}
+				formData={formData}
 				onBack={() => {
 					setProceedToUpload(false);
 				}}
