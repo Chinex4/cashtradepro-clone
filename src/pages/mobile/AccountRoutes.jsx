@@ -13,6 +13,7 @@ import AccountActivity from '../account/AcountActivity';
 import BindGoogleAuthenticator from '../account/BindGoogleAuthentication';
 import DisableAccount from '../account/DisableAccount';
 import BindMobile from '../account/BindMobile';
+import AdvancedVerificationForm from '../account/AdvancedVerificationForm';
 
 // import other components...
 
@@ -42,6 +43,10 @@ const AccountRoutes = () => {
 					<Route
 						path='basic-verification'
 						element={<BasicVerificationForm />}
+					/>
+					<Route
+						path='advanced-verification'
+						element={<AdvancedVerificationForm />}
 					/>
 					<Route
 						path='/security/bind-google-auth'

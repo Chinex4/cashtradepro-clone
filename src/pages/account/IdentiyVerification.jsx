@@ -5,8 +5,8 @@ import useFetchLoggedInUser from "../../hooks/useFetchedLoggedInUser";
 const IdentityVerification = () => {
   const { user: fetchedUser } = useFetchLoggedInUser();
 
-  const isKycVerified = fetchedUser?.message?.userDetails?.kyc;
-//   const isKycVerified = 'Pending';
+    const isKycVerified = fetchedUser?.message?.userDetails?.kyc;
+//   const isKycVerified = "Verified";
 
   return (
     <div className="text-white p-4 md:p-6 lg:p-10 space-y-8 text-xs">
@@ -76,15 +76,15 @@ const IdentityVerification = () => {
             </p>
           </div>
 
-          {isKycVerified === 'Verified' ? (
+          {isKycVerified === "Verified" ? (
             <button className="px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed">
               Already Verified
             </button>
-          ) : isKycVerified === 'Pending' ? (
-			<button className="px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed">
+          ) : isKycVerified === "Pending" ? (
+            <button className="px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed">
               Pending... Awaiting Verification
             </button>
-		  ) : (
+          ) : (
             <Link
               to={"/account/basic-verification"}
               className="px-8 bg-lime-400 hover:bg-lime-500 text-black rounded-md py-2 text-center"
@@ -128,12 +128,22 @@ const IdentityVerification = () => {
             </p>
           </div>
 
-          <button
-            className="px-8 bg-[#1a1a1a] text-gray-500 rounded-md py-2 font-semibold cursor-not-allowed"
-            disabled
-          >
-            Basic verification required
-          </button>
+          {isKycVerified === "Verified" ? (
+            <Link
+              to={"/account/advanced-verification"}
+              className="px-8 bg-lime-400 hover:bg-lime-500 text-black rounded-md py-2 text-center"
+            >
+              Verify
+            </Link>
+          ) : isKycVerified === null || "Pending" ? (
+            <button className="px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed">
+              Basic Verification Required
+            </button>
+          ) : (
+            <button className="px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed">
+              Pending... Awaiting Verification
+            </button>
+          )}
         </div>
       </div>
 

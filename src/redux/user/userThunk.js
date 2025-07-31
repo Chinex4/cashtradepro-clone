@@ -172,3 +172,52 @@ export const submitVerificationThunk = (data) => async (dispatch) => {
     console.error(err);
   }
 };
+
+export const submitAdvancedVerification = (file) => async (dispatch) => {
+  try {
+    const formData = new FormData();
+    formData.append('proofOfAddress', file);
+
+    await showPromise(
+      axiosInstance.post('/user/advancedVerification', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }),
+      {
+        loading: 'Submitting advanced verification...',
+        success: 'Proof of address submitted!',
+        error: 'Failed to submit proof of address.',
+      }
+    );
+
+    // Optional: refetch user info
+    dispatch(fetchLoggedInUser());
+  } catch (err) {
+    console.error('Advanced verification failed:', err);
+  }
+};
+
+export const setAntiPhishingCode = createAsyncThunk(
+  'user/setAntiPhishingCode',
+  async (code, { rejectWithValue }) => {
+    try {
+      const response = await axiosInstance.post('/user/setAntiPhishingCode', { code });
+      return response.data.message;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || 'Failed to set code');
+    }
+  }
+);
+
+export const disableAccount = createAsyncThunk(
+  'user/disableAccount',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axiosInstance.post('/user/disableAccount');
+      return response.data.message;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || 'Failed to disable account');
+    }
+  }
+);

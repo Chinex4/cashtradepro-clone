@@ -30,6 +30,8 @@ const Security = () => {
   const uid = fetchedUser?.message?.userDetails.uid ?? "";
   const isGoogleAuthEnabled =
     fetchedUser?.message?.userDetails?.isGoogleAUthEnabled ?? "";
+  const antiPhishingCode =
+    fetchedUser?.message?.userDetails?.antiPhishingCode ?? "";
 
   const [showUID, setShowUID] = useState(false);
   const handleCopy = () => {
@@ -202,12 +204,29 @@ const Security = () => {
                 </p>
               </div>
             </div>
-            <Link
-              to={"/account/security/set-phish-code"}
-              className="text-lime-400 border cursor-pointer border-lime-400 text-xs px-3 py-1 rounded"
-            >
-              Set up
-            </Link>
+            {antiPhishingCode ? (
+              <div>
+                <span className="text-xs text-gray-400">
+                  {antiPhishingCode} |{" "}
+                </span>
+                <Link
+                  to={"/account/security/set-phish-code"}
+                  className="text-lime-400 border cursor-pointer border-lime-400 text-xs px-3 py-1 rounded"
+                >
+                  Change
+                </Link>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-gray-400">Not set | </span>
+                <Link
+                  to={"/account/security/set-phish-code"}
+                  className="text-lime-400 border cursor-pointer border-lime-400 text-xs px-3 py-1 rounded"
+                >
+                  Set up
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
