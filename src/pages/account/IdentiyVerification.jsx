@@ -5,11 +5,11 @@ import useFetchLoggedInUser from "../../hooks/useFetchedLoggedInUser";
 const IdentityVerification = () => {
   const { user: fetchedUser } = useFetchLoggedInUser();
 
-//   const isKycVerified = fetchedUser?.message?.userDetails?.kyc;
-  const isKycVerified = 'Pending';
+  const isKycVerified = fetchedUser?.message?.userDetails?.kyc;
+//   const isKycVerified = 'Pending';
 
   return (
-    <div className="text-white p-4 md:p-6 lg:p-10 space-y-8">
+    <div className="text-white p-4 md:p-6 lg:p-10 space-y-8 text-xs">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="space-y-2">
           <h2 className="text-2xl lg:text-3xl font-bold">Verification</h2>
@@ -22,14 +22,14 @@ const IdentityVerification = () => {
             account and funds, please verify your identity truthfully.
             <br />
             KYC must be completed by the account owner.{" "}
-            <span className="text-lime-400 underline cursor-pointer">
+            {/* <span className="text-lime-400 underline cursor-pointer">
               Disclaimer
             </span>
             <br />
             Description of Interests,{" "}
             <span className="text-lime-400 underline cursor-pointer">
               KYC Level Benefits
-            </span>
+            </span> */}
           </p>
         </div>
         <div>
@@ -77,17 +77,17 @@ const IdentityVerification = () => {
           </div>
 
           {isKycVerified === 'Verified' ? (
-            <button className="px-8 bg-zinc-700 text-gray-400 rounded-md py-2 font-semibold cursor-not-allowed">
+            <button className="px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed">
               Already Verified
             </button>
           ) : isKycVerified === 'Pending' ? (
-			<button className="px-8 bg-zinc-700 text-gray-400 rounded-md py-2 font-semibold cursor-not-allowed">
+			<button className="px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed">
               Pending... Awaiting Verification
             </button>
 		  ) : (
             <Link
               to={"/account/basic-verification"}
-              className="px-8 bg-lime-400 hover:bg-lime-500 text-black rounded-md py-2 font-semibold text-center"
+              className="px-8 bg-lime-400 hover:bg-lime-500 text-black rounded-md py-2 text-center"
             >
               Verify
             </Link>
@@ -153,7 +153,7 @@ const IdentityVerification = () => {
             </p>
           </div>
 
-          <button className="bg-lime-400 hover:bg-lime-500 text-black rounded-md py-2 px-8 font-semibold">
+          <button className="bg-lime-400 hover:bg-lime-500 text-black rounded-md py-2 px-8">
             Verify
           </button>
         </div>
