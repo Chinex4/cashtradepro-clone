@@ -9,16 +9,20 @@ export default function UploadIDPage({ formData, onBack }) {
   const [backFile, setBackFile] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+ 
+  	const createdAt = new Date().toLocaleString('en-US', {
+      timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    });
   const handleSubmit = () => {
     const finalData = {
       ...formData,
       frontImage: frontFile,
       backImage: backFile,
+      createdAt,
     };
 
     dispatch(submitVerificationThunk(finalData));
-	navigate('/account/identity-verification'); // Navigate to success page
+	// navigate('/account/identity-verification'); 
 	
   };
 

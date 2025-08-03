@@ -44,10 +44,13 @@ export default function AdvancedVerificationForm() {
     resolver: yupResolver(schema),
     mode: "onChange",
   });
-
+	const createdAt = new Date().toLocaleString('en-US', {
+    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+  });
+  
   const onSubmit = (data) => {
-    dispatch(submitAdvancedVerification(data.file[0])); // we want the File object
-    navigate("/account/identity-verification"); // Navigate to success page
+    dispatch(submitAdvancedVerification(data.file[0], createdAt)); 
+    // navigate("/account/identity-verification");  
   };
 
   return (

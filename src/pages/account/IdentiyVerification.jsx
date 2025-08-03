@@ -5,8 +5,8 @@ import useFetchLoggedInUser from "../../hooks/useFetchedLoggedInUser";
 const IdentityVerification = () => {
   const { user: fetchedUser } = useFetchLoggedInUser();
 
-    const isKycVerified = fetchedUser?.message?.userDetails?.kyc;
-//   const isKycVerified = "Verified";
+    // const isKycVerified = fetchedUser?.message?.userDetails?.kyc;
+  const isKycVerified = "Verified";
 
   return (
     <div className="text-white p-4 md:p-6 lg:p-10 space-y-8 text-xs">
