@@ -73,9 +73,9 @@ const Security = () => {
               <span className="bg-green-700 text-xs px-2 py-1 rounded">
                 Regular User
               </span>
-              <p className="text-[14px] text-white/70 mt-2 flex items-center gap-3">
+              <div className="text-[14px] text-white/70 mt-2 flex items-center gap-3">
                 <span>UID: {showUID ? uid : "*******"}</span>
-                <div classname="inline-flex items-center gap-2">
+                <div className="inline-flex items-center gap-2">
                   <button
                     onClick={() => setShowUID(!showUID)}
                     className="cursor-pointer inline text-white hover:text-lime-400"
@@ -88,7 +88,7 @@ const Security = () => {
                     className="ml-1 inline cursor-pointer text-white hover:text-lime-400"
                   />
                 </div>
-              </p>
+              </div>
             </div>
           </div>
         </div>

@@ -163,9 +163,9 @@ const IdentityVerification = () => {
             </p>
           </div>
 
-          <button className="bg-lime-400 hover:bg-lime-500 text-black rounded-md py-2 px-8">
+          <Link to={'/account/institutional-verification'} className="bg-lime-400 hover:bg-lime-500 text-black text-center rounded-md py-2 px-8">
             Verify
-          </button>
+          </Link>
         </div>
       </div>
     </div>

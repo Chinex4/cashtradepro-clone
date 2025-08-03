@@ -244,3 +244,22 @@ export const disableAccount = createAsyncThunk(
     }
   },
 );
+
+export const institutionalVerification = createAsyncThunk(
+	'user/institutionalVerification',
+	async (data, { rejectWithValue }) => {
+		try {
+			const res = await showPromise(
+				axiosInstance.post('/user/institutionalVerification', data),
+				{
+					loading: 'Submitting application...',
+					success: 'Institutional verification submitted!',
+					error: 'Submission failed',
+				}
+			);
+			return res.data;
+		} catch (error) {
+			return rejectWithValue(error.response?.data || 'Submission failed');
+		}
+	}
+);
