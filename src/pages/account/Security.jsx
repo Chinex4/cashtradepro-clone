@@ -231,7 +231,7 @@ const Security = () => {
         </div>
       </div>
 
-      <WithdrawalSecurity />
+      {/* <WithdrawalSecurity /> */}
 
       <div className="mb-10">
         <h2 className="text-lg font-semibold mb-4">Account Activity</h2>

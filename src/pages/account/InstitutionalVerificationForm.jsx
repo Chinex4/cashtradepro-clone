@@ -8,6 +8,7 @@ import { ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { showPromise } from "../../utils/toast";
 import { institutionalVerification } from "../../redux/user/userThunk";
 import GoBack from "../../components/ui/GoBack";
+import { useNavigate } from "react-router-dom";
 
 const locationOptions = [
   "North America",
@@ -41,6 +42,7 @@ const schema = Yup.object().shape({
 export default function InstitutionalVerificationForm() {
   const dispatch = useDispatch();
   const [touched, setTouched] = useState(false);
+  const navigate = useNavigate();
 
   const {
     control,
@@ -68,6 +70,8 @@ export default function InstitutionalVerificationForm() {
       createdAt,
     };
     dispatch(institutionalVerification(payload));
+    navigate('/account/identity-verification');
+
   };
 
   return (

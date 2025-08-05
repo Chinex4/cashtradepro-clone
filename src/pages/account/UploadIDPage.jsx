@@ -22,7 +22,7 @@ export default function UploadIDPage({ formData, onBack }) {
     };
 
     dispatch(submitVerificationThunk(finalData));
-    // navigate('/account/identity-verification');
+    navigate('/account/identity-verification');
   };
 
   return (

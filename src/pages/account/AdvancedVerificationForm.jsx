@@ -50,7 +50,7 @@ export default function AdvancedVerificationForm() {
   
   const onSubmit = (data) => {
     dispatch(submitAdvancedVerification(data.file[0], createdAt)); 
-    // navigate("/account/identity-verification");  
+    navigate("/account/identity-verification");  
   };
 
   return (
