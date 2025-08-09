@@ -190,7 +190,7 @@ const Security = () => {
               to="/account/security/modify-password"
               className="text-lime-400 text-xs underline cursor-pointer"
             >
-              Changeth
+              Change
             </Link>
           </div>
 

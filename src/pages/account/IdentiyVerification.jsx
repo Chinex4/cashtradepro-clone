@@ -4,15 +4,34 @@ import useFetchLoggedInUser from '../../hooks/useFetchedLoggedInUser';
 
 const IdentityVerification = () => {
   const { user: fetchedUser } = useFetchLoggedInUser();
+
   const isKycVerified =
     fetchedUser?.message?.userDetails?.BasicVerification === 'Verified'
       ? 'Verified'
+      : fetchedUser?.message?.userDetails?.BasicVerification === 'Pending'
+      ? 'Pending'
       : '';
 
-  // const isKycVerified = "Verified";
+  const isAdvancedKycVerified =
+    fetchedUser?.message?.userDetails?.AdvancedVerification === 'Verified'
+      ? 'Verified'
+      : fetchedUser?.message?.userDetails?.AdvancedVerification === 'Pending'
+      ? 'Pending'
+      : '';
 
-  console.log(isKycVerified);
+  const isinstitutionalVerificationKycVerified =
+    fetchedUser?.message?.userDetails?.InstitutionalVerification === 'Verified'
+      ? 'Verified'
+      : fetchedUser?.message?.userDetails?.InstitutionalVerification ===
+        'Pending'
+      ? 'Pending'
+      : '';
 
+  console.log(
+    isKycVerified,
+    isAdvancedKycVerified,
+    isinstitutionalVerificationKycVerified,
+  );
 
   return (
     <div className='text-white p-4 md:p-6 lg:p-10 space-y-8 text-xs'>
@@ -27,15 +46,7 @@ const IdentityVerification = () => {
             According to the regulatory requirements, for the safety of your
             account and funds, please verify your identity truthfully.
             <br />
-            KYC must be completed by the account owner.{' '}
-            {/* <span className="text-lime-400 underline cursor-pointer">
-              Disclaimer
-            </span>
-            <br />
-            Description of Interests,{" "}
-            <span className="text-lime-400 underline cursor-pointer">
-              KYC Level Benefits
-            </span> */}
+            KYC must be completed by the account owner.
           </p>
         </div>
         <div>
@@ -54,7 +65,7 @@ const IdentityVerification = () => {
           <div>
             <p className='font-medium mb-1'>Support</p>
             <p>Daily Withdrawal Limit</p>
-            <p>Operational events and activites</p>
+            <p>Operational events and activities</p>
           </div>
           <div>
             <p className='font-medium mb-1'>Unverified</p>
@@ -110,7 +121,7 @@ const IdentityVerification = () => {
           <div>
             <p className='font-medium mb-1'>Support</p>
             <p>Daily Withdrawal Limit</p>
-            <p>Operational events and activites</p>
+            <p>Operational events and activities</p>
           </div>
           <div>
             <p className='font-medium mb-1'>Unverified</p>
@@ -134,28 +145,28 @@ const IdentityVerification = () => {
             </p>
           </div>
 
-          {isKycVerified === 'Verified' ? (
+          {isAdvancedKycVerified === 'Verified' ? (
+            <button className='px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed'>
+              Already Verified
+            </button>
+          ) : isAdvancedKycVerified === 'Pending' ? (
+            <button className='px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed'>
+              Pending... Awaiting Verification
+            </button>
+          ) : (
             <Link
               to={'/account/advanced-verification'}
               className='px-8 bg-lime-400 hover:bg-lime-500 text-black rounded-md py-2 text-center'
             >
               Verify
             </Link>
-          ) : isKycVerified === null || 'Pending' ? (
-            <button className='px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed'>
-              Basic Verification Required
-            </button>
-          ) : (
-            <button className='px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed'>
-              Pending... Awaiting Verification
-            </button>
           )}
         </div>
       </div>
 
       {/* Institutional Verification */}
       <div className='border border-[#333] rounded-lg p-4 space-y-4 text-white'>
-        <h3 className='text-lg font-semibold'>Institutional certification</h3>
+        <h3 className='text-lg font-semibold'>Institutional Certification</h3>
         <p className='text-sm text-gray-400'>
           Level up your trading experience with Cashtradepro business account
         </p>
@@ -169,12 +180,22 @@ const IdentityVerification = () => {
             </p>
           </div>
 
-          <Link
-            to={'/account/institutional-verification'}
-            className='bg-lime-400 hover:bg-lime-500 text-black text-center rounded-md py-2 px-8'
-          >
-            Verify
-          </Link>
+          {isinstitutionalVerificationKycVerified === 'Verified' ? (
+            <button className='px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed'>
+              Already Verified
+            </button>
+          ) : isinstitutionalVerificationKycVerified === 'Pending' ? (
+            <button className='px-8 bg-zinc-700 text-gray-400 rounded-md py-2 cursor-not-allowed'>
+              Pending... Awaiting Verification
+            </button>
+          ) : (
+            <Link
+              to={'/account/institutional-verification'}
+              className='bg-lime-400 hover:bg-lime-500 text-black text-center rounded-md py-2 px-8'
+            >
+              Verify
+            </Link>
+          )}
         </div>
       </div>
     </div>
