@@ -32,9 +32,9 @@ const FAQ = ({ showHeader = true }) => {
 		setActiveIndex(index === activeIndex ? null : index);
 	};
 	return (
-		<section className='max-w-7xl mx-auto mt-12 px-4'>
+		<section className='max-w-7xl mx-auto mt-12 px-4 text-sm'>
 			{showHeader && (
-				<h2 className='mb-4 md:mb-8 text-xl md:text-2xl lg:text-4xl font-bold text-left md:text-center '>
+				<h2 className='mb-4 md:mb-8 text-lg md:text-2xl lg:text-4xl font-bold text-left md:text-center '>
 					Frequently Asked Questions
 				</h2>
 			)}
@@ -44,7 +44,7 @@ const FAQ = ({ showHeader = true }) => {
 					className='mb-4 border-b border-white/10'>
 					<button
 						onClick={() => toggleFAQ(index)}
-						className='w-full flex justify-between items-center py-4 text-left text-sm md:text-base'>
+						className='w-full flex justify-between items-center py-4 text-left text-[13px] md:text-base'>
 						{faq.question}
 						<motion.span
 							animate={{ rotate: activeIndex === index ? 180 : 0 }}
@@ -59,7 +59,7 @@ const FAQ = ({ showHeader = true }) => {
 								animate={{ height: 'auto', opacity: 1 }}
 								exit={{ height: 0, opacity: 0 }}
 								transition={{ duration: 0.4 }}
-								className='overflow-hidden text-sm text-gray-400 mb-3 px-1'>
+								className='overflow-hidden text-xs text-gray-400 mb-3 px-1'>
 								{faq.answer}
 							</motion.p>
 						)}
