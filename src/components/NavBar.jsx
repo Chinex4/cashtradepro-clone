@@ -98,12 +98,7 @@ const Navbar = () => {
         {isAuthenticated ?
           <>
             <SearchWrapper />
-            <AssetsDropdown
-              showBalance={showBalance}
-              setShowBalance={setShowBalance}
-              selectedCurrency={selectedCurrency}
-              setSelectedCurrency={setSelectedCurrency}
-            />
+            
             <UserDropdown
               email={email}
               uid={uid}
@@ -123,8 +118,7 @@ const Navbar = () => {
               filteredNotifications={filteredNotifications}
               markAllAsRead={markAllAsRead}
             />
-            <LanguageCurrencyTrigger />
-            <MobileUserTrigger setIsUserOpen={setIsUserOpen} />
+            
           </>
         : <AuthButtons />}
 

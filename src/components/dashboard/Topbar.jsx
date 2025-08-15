@@ -5,7 +5,7 @@ import { notifications as defaultNotifications } from "../navbar/navbar.config";
 import UserDropdown from "../navbar/UserDropdown";
 import useFetchLoggedInUser from "../../hooks/useFetchedLoggedInUser";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../redux/auth/authSlice";
 
 export default function Topbar({ onOpenSidebar }) {
@@ -57,9 +57,9 @@ export default function Topbar({ onOpenSidebar }) {
         >
           <Menu />
         </button>
-        <div className="">
+        <Link to={'/'} className="">
           <img className="w-32" src="/cashtradepro-logo2.png" alt="" />
-        </div>
+        </Link>
         <div className="flex items-center gap-2">
           <NotificationDropdown
             unread={unread}

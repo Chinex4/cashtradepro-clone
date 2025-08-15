@@ -120,7 +120,7 @@ const UserMobileDrawer = ({
           </Link>
         </li>
 
-        <li className='flex items-center gap-4 w-full'>
+        {/* <li className='flex items-center gap-4 w-full'>
           <Link
             to='/activity/act-center'
             onClick={() => setIsUserOpen(false)}
@@ -135,36 +135,10 @@ const UserMobileDrawer = ({
           >
             Task Center
           </Link>
-        </li>
+        </li> */}
 
         {[
-          {
-            path: "/assets/spot-account",
-            label: "Spot Account",
-            percentage: true,
-          },
-          {
-            path: "/assets/futures-account",
-            label: "Futures Account",
-            percentage: true,
-          },
-          {
-            path: "/assets/earn-account",
-            label: "Earn Account",
-            percentage: true,
-          },
-          {
-            path: "/assets/copy-account",
-            label: "Copy Account",
-            percentage: true,
-          },
-          { path: "/orders/", label: "Orders Center" },
-          { path: "/assets/spot-transactions", label: "Transaction History" },
-          { path: "/assets/rewards", label: "My Rewards" },
-          { path: "/account/security", label: "Security" },
-          { path: "/account/identity-verification", label: "KYC" },
-          { path: "/referral", label: "Referral Hub" },
-          { path: "/account/settings", label: "Settings" },
+          { path: "/dashboard", label: "Dashboard" },
         ].map(({ path, label, percentage }) => (
           <li key={path}>
             <Link
@@ -173,7 +147,6 @@ const UserMobileDrawer = ({
               className='flex justify-between'
             >
               <span>{label}</span>
-              {percentage && <span>--%</span>}
             </Link>
           </li>
         ))}

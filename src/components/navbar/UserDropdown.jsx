@@ -93,37 +93,7 @@ const UserDropdown = ({
               Dashboard
             </Link>
           </li>
-          <li>
-            <Link to="/assets/rewards" onClick={handleClose()}>
-              My Rewards
-            </Link>
-          </li>
-          <li className="flex items-center justify-between">
-            <Link to="/account/security" onClick={handleClose()}>
-              Security
-            </Link>
-            <span className="w-2 h-2 bg-red-500 rounded-full" />
-          </li>
-          <li>
-            <Link to="/account/identity-verification" onClick={handleClose()}>
-              Verification
-            </Link>
-          </li>
-          <li>
-            <Link to="/referral" onClick={handleClose()}>
-              Referral Hub
-            </Link>
-          </li>
-          <li>
-            <Link to="/account/settings" onClick={handleClose()}>
-              Settings
-            </Link>
-          </li>
-          <li>
-            <Link to="/api" onClick={handleClose()}>
-              API
-            </Link>
-          </li>
+          
 
           <hr className="border-gray-700 my-2" />
 

@@ -20,8 +20,6 @@ import Login from "./pages/desktop/Login";
 import Signup from "./pages/desktop/Signup";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
-import AssetsRoutes from "./pages/mobile/AssetsRoutes";
-import AccountRoutes from "./pages/mobile/AccountRoutes";
 import ForgotPassword from "./pages/desktop/ForgotPassword";
 import ResetPassword from "./pages/desktop/ResetPassword";
 import { Toaster } from "react-hot-toast";
@@ -29,8 +27,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout, setUserFromToken } from "./redux/auth/authSlice";
 import { useEffect } from "react";
 import PrivateRoute from "./components/PrivateRoute";
-import OrdersRoutes from "./pages/mobile/OrdersRoutes";
-import VipService from "./pages/desktop/VipService";
 import { RedirectIfAuthenticated } from "./components/RedirectIfAuthenticated";
 import i18n from "./i18n";
 import DashboardRoutes from "./pages/desktop/DashboardRoutes";
@@ -114,12 +110,7 @@ function App() {
             path="/reset-password/:token/:email/:num"
             element={<ResetPassword />}
           />
-          <Route element={<PrivateRoute />}>
-            <Route path="/assets/*" element={<AssetsRoutes />} />
-            <Route path="/account/*" element={<AccountRoutes />} />
-            <Route path="/orders/*" element={<OrdersRoutes />} />
-            <Route path="/service/vipservice" element={<VipService />} />
-          </Route>
+          <Route element={<PrivateRoute />}></Route>
           <Route path="*" element={<NotFound />} />
         </Route>
 
