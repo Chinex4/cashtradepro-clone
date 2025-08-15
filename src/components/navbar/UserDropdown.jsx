@@ -89,6 +89,11 @@ const UserDropdown = ({
           <hr className="border-gray-700 my-2" />
 
           <li>
+            <Link to="/dashboard" onClick={handleClose()}>
+              Dashboard
+            </Link>
+          </li>
+          <li>
             <Link to="/assets/rewards" onClick={handleClose()}>
               My Rewards
             </Link>

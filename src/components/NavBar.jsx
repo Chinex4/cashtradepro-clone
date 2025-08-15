@@ -65,7 +65,6 @@ const Navbar = () => {
     navigate("/login");
   };
 
-  const markAllAsRead = () => setUnread(0);
 
   // Close dropdowns on outside click
   const dropdownRef = useRef(null);
@@ -78,6 +77,8 @@ const Navbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+  const markAllAsRead = () => setUnread(0);
+
 
   const filteredNotifications =
     activeTab === "All" ? notifications : (
