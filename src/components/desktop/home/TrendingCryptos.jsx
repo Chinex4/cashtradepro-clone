@@ -1,10 +1,9 @@
 import { ChevronRight } from 'lucide-react';
 import { useState, useEffect, useMemo } from 'react';
 import { Sparklines, SparklinesLine } from 'react-sparklines';
-import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { getCoinMarkets } from '../../../api/coingecko';
 
-const API_KEY = import.meta.env.VITE_COINGECKO_API_KEY;
 const CACHE_KEY = 'coingecko_trending_data';
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
@@ -38,50 +37,34 @@ export default function TrendingCryptos() {
 					}
 				}
 
-				// Fetch from API
-				const headers = {
-					headers: {
-						'x-cg-pro-api-key': API_KEY,
-					},
-				};
-
 				const [futures, spot, gainers] = await Promise.all([
-					axios.get('https://pro-api.coingecko.com/api/v3/coins/markets', {
-						...headers,
-						params: {
-							vs_currency: 'usd',
-							order: 'open_interest_desc',
-							per_page: 5,
-							page: 1,
-							sparkline: true,
-						},
+					getCoinMarkets({
+						vs_currency: 'usd',
+						order: 'open_interest_desc',
+						per_page: 5,
+						page: 1,
+						sparkline: true,
 					}),
-					axios.get('https://pro-api.coingecko.com/api/v3/coins/markets', {
-						...headers,
-						params: {
-							vs_currency: 'usd',
-							order: 'volume_desc',
-							per_page: 5,
-							page: 1,
-							sparkline: true,
-						},
+					getCoinMarkets({
+						vs_currency: 'usd',
+						order: 'volume_desc',
+						per_page: 5,
+						page: 1,
+						sparkline: true,
 					}),
-					axios.get('https://pro-api.coingecko.com/api/v3/coins/markets', {
-						...headers,
-						params: {
-							vs_currency: 'usd',
-							order: 'price_change_percentage_24h_desc',
-							per_page: 5,
-							page: 1,
-							sparkline: true,
-						},
+					getCoinMarkets({
+						vs_currency: 'usd',
+						order: 'price_change_percentage_24h_desc',
+						per_page: 5,
+						page: 1,
+						sparkline: true,
 					}),
 				]);
 
 				const result = {
-					'Popular Futures': futures.data,
-					'Popular Spot': spot.data,
-					Gainers: gainers.data,
+					'Popular Futures': futures,
+					'Popular Spot': spot,
+					Gainers: gainers,
 				};
 
 				// Update state and cache

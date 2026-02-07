@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getCoinMarkets } from '../../../api/coingecko';
 
-const API_KEY = import.meta.env.VITE_COINGECKO_API_KEY;
 const CACHE_KEY = 'cached_coin_data';
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
@@ -27,18 +27,13 @@ const CryptoPortfolio = () => {
 					}
 				}
 
-				// Fetch from API
-				const response = await fetch(
-					'https://pro-api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=50&page=1&sparkline=false',
-					{
-						headers: {
-							'x-cg-pro-api-key': API_KEY,
-						},
-					}
-				);
-
-				if (!response.ok) throw new Error('API error');
-				const data = await response.json();
+				const data = await getCoinMarkets({
+					vs_currency: 'usd',
+					order: 'market_cap_desc',
+					per_page: 50,
+					page: 1,
+					sparkline: false,
+				});
 				setCoins(data);
 
 				// Cache result
